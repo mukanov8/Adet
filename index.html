@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Okhunov Umidjon 20180749</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <link
+      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="jquery/css/ui-lightness/jquery-ui-1.10.0.custom.css"
+      rel="stylesheet"
+    />
+    <link href="./item_page.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Comic+Neue"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <h1 class="col-xs-1 glyphicon glyphicon-arrow-left"></h1>
+        <h1 class="text-center">Hoodie</h1>
+      </div>
+    </div>
+    <!-- <img src="hoodie.jpg" class="img-responsive" alt="Cinque Terre" /> -->
+    <div class="thumbnail">
+      <a href="hoodie.jpg">
+        <img
+          src="hoodie.jpg"
+          alt="Lights"
+          class="img-responsive"
+          style="width: 80%;"
+        />
+        <div class="caption text-center">
+          <p>This hoodies is so hot!</p>
+        </div>
+      </a>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-4 well well-sm">
+          <h3>Bought on</h3>
+          <p style="background-color: lavender;" id="boughtOn">10/10/1998</p>
+        </div>
+        <div class="col-xs-4 well well-sm">
+          <h3>Last worn</h3>
+          <p style="background-color: lavender;" id="lastWorn">10/10/2018</p>
+        </div>
+        <div class="col-xs-4 well well-sm">
+          <h3>Times worn</h3>
+          <p style="background-color: lavender;" id="timesWorn">37</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="notification">
+      <div class="well">
+        <b>Notification: </b>You should throw this clothes away!
+      </div>
+    </div>
+
+    <div class="bottom btn-group btn-group-justified">
+      <div class="glyphicon glyphicon-share btn">Share</div>
+      <div class="glyphicon glyphicon-comment btn">4</div>
+      <div class="glyphicon glyphicon-trash btn">Delete</div>
+    </div>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+	     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCGcf3vNegqWkDKc6dvjA7GTBUT6yIAD1k",
+        authDomain: "capitalgame-70629.firebaseapp.com",
+        databaseURL: "https://capitalgame-70629.firebaseio.com",
+        projectId: "capitalgame-70629",
+        storageBucket: "capitalgame-70629.appspot.com",
+        messagingSenderId: "683861894090",
+        appId: "1:683861894090:web:59203d7874bdb248a6a533",
+        measurementId: "G-0P5J1K5GNP",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      const db = firebase.firestore();
+    </script>
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase.js"></script>
+    <script src="./item_page.css"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
