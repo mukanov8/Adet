@@ -4,3 +4,7 @@
   bottom: 0;
   width: 100%;
 }
+
+#back {
+  opacity: 0.9;
+}
