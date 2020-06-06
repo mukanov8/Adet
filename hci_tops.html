@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utrf-8"/>
+        <link href="hci_tops.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id = "parent">
+            <div id = "back_button">
+                <button type="button" id = "arrow_button"></button>
+                <img src = "./images/arrow.png" id = "arrow"/>
+                <script>
+                    arrow = document.getElementById("arrow_button");
+                    arrow.onclick = function(){
+                        location.href = "./hci_main_page.html";
+                    }
+                </script>
+            </div>
+
+            <div id = "title_box"></div>
+            <div id = "title">TOP</div>
+            <div class = "rectangle" id ="rectangle_1">T-Shirt</div>
+                <img src = "./images/blue_tshirt.jpeg" id  = "blue_tshirt">
+                <img src = "./images/yellow_tshirt.jpg" id  = "yellow_tshirt">
+
+            <div class ="rectangle" id ="rectangle_2">Hoodie</div>
+            <div id = "pink_hoodie">
+                <img src = "./images/pink_hoodie.jpeg" id  = "ph">
+                <button type="button" id = "pink_hoodie_button"></button>
+            </div>
+            <img src = "./images/black_hoodie.jpg" id  = "black_hoodie">
+            <div class = "rectangle" id ="rectangle_3">Shirt</div>
+            <img src = "./images/shirt.jpg" id = "shirt"/>
+        </div>
+    </body>
+</html>
