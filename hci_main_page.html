@@ -20,26 +20,37 @@
                 <img src = "./images/user_body.png" id = "user_body">
             </div>
             <div id = "usr_wrd">User's Wardrobe</div>
-            <div id = "items_count">Items: 5</div>
+            <div id = "items_count">Items: </div>
             <div id = "divide_bar"></div>
             <form>
                 <input type="text" id="search_bar" name="search_request" placeholder = "search...">
             </form>
+
             <div class = "words" id ="view_all">View all</div>
+            <form>
+            <button type="button" id = "all_button" formaction = "./hci_all.html"></button>
+            </form>
 
             <div class = "words" id = "tops">Top</div> 
-            <button type="button" id = "tops_button"></button>
-
-            <script>
-            top = document.getElementById("tops_button");
-            top.onclick = function() {
-            location.href = "./hci_tops.html";
-            };
-            </script>
+            <form>
+            <button type="submit" id = "tops_button" formaction = "./hci_tops.html"></button>
+            </form>
 
             <div class = "words" id = "bottom">Bottom</div>
+            <form>
+            <button type="submit" id = "bottom_button" formaction = "./hci_bottom.html"></button>
+            </form>
+
             <div class = "words" id = "outer">Outerwear</div>
+            <form>
+            <button type="submit" id = "outer_button" formaction = "./hci_outer.html"></button>
+            </form>
+
             <div class = "words" id = "shoes">Shoes</div>
+            <form>
+            <button type="submit" id = "shoes_button" formaction = "./hci_shoes.html"></button>
+            </form>
+
             <div class = "line" id ="line_1"></div>
             <div class = "line" id ="line_2"></div>
             <div class = "line" id ="line_3"></div>
