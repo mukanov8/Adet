@@ -8,6 +8,15 @@ $(document).ready(function () {
       });
     });
 
+  // Create a reference to the file we want to download
+  var starsRef = storage.child("hoodie.jpg");
+
+  // Get the download URL
+  starsRef.getDownloadURL().then(function (url) {
+    document.getElementById("image").src = url;
+    document.getElementById("imageRef").href = url;
+  });
+
   // Increasing and decreasing timesWorn
   document.getElementById("plus").addEventListener("click", function () {
     document.getElementById("timesWorn").innerHTML =

@@ -15,6 +15,7 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Sahitya&display=swap"
       rel="stylesheet"
@@ -53,9 +54,10 @@
       <div>
         <h3 class="text-center" id="name">Pink Hoodie - H&M</h3>
       </div>
-      <a href="images/hoodie.jpg">
+      <a id="imageRef" href="">
         <img
-          src="images/hoodie.jpg"
+          id="image"
+          src=""
           alt="clothes"
           class="img-responsive"
           style="width: 70%;"
@@ -75,24 +77,10 @@
         </div>
         <div class="col-xs-4 well well-sm text-center">
           <h5>Times worn</h5>
-          <p style="background-color: lavender;">
-            <i class="glyphicon glyphicon-minus btn btn-xs" id="minus">
-              <!-- <span
-                class="iconify"
-                data-inline="false"
-                data-icon="ant-design:minus-outlined"
-                style="font-size: 16px;"
-              ></span> --> </i
+          <p style="background-color: lavender;" id="timesWornBar">
+            <i class="glyphicon glyphicon-minus btn btn-xs" id="minus"></i
             ><span id="timesWorn"> 55 </span
-            ><i class="glyphicon glyphicon-plus btn btn-xs" id="plus">
-              <!-- <span
-                class="iconify"
-                data-inline="false"
-                data-icon="ant-design:plus-outlined"
-                style="font-size: 16px;"
-              ></span
-            > -->
-            </i>
+            ><i class="glyphicon glyphicon-plus btn btn-xs" id="plus"></i>
           </p>
         </div>
       </div>
@@ -104,7 +92,7 @@
       </div>
     </div>
 
-    <div class="btn-group btn-group-justified bottom">
+    <div class="btn-group-justified bottom">
       <div class="btn" id="share">
         <span
           class="iconify"
@@ -166,6 +154,7 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore();
+      var storage = firebase.storage().ref();
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="jquery/js/jquery-1.9.0.min.js"></script>
