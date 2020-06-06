@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-    // document.cookie = "userId=someuserid"
     const query = new URLSearchParams(window.location.search);
     const postId = query.get('q');
     const postedBy = query.get('user');
@@ -7,7 +6,6 @@ $( document ).ready(function() {
     var submitButton = document.getElementById("submitComment")
     var commentBox = document.getElementById("addCommentText")
     var nameBox = document.getElementById("name")
-    //  createData()
     
 
     $('#name').keypress(event => {
@@ -47,16 +45,11 @@ $( document ).ready(function() {
         nameBox.value = ""
         getName()
         commentBox.value = ""
-        
-        // var entry = firebase.database().ref('/comments/').child("somepostid")
-        // var dt = (new Date()).toString().substring(0,10)
-        // entry.set({ comments: [{name: "Adet commenter#1", comment: "Nice!", date: dt}, {name: "Adet commenter#2", comment: "Not good at all", date: dt}] })
-        // return entry
     }
+    
     function createData() {
         var entry = firebase.database().ref('/comments/').child(postId)
-        // var dt = (new Date()).toString().substring(0,10)
-        entry.set({owner: postedBy, comments: [{}]})
+        entry.set({comments: [{}]})
         return entry
     }
 
@@ -106,22 +99,4 @@ $( document ).ready(function() {
         commentDiv.appendChild(commentText)
         addTo.appendChild(commentDiv)
     }
-
-
-//   <div class="comment">
-//     <div class="content">
-//       <a class="author">Stevie Feliciano</a>
-//       <div class="metadata">
-//         <div class="date">2 days ago</div>
-//         <div class="rating">
-//           <i class="star icon"></i>
-//           5 Faves
-//         </div>
-//       </div>
-//       <div class="text">
-//         Hey guys, I hope this example comment is helping you read this documentation.
-//       </div>
-//     </div>
-//   </div>
-
 })
