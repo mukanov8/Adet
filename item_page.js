@@ -81,7 +81,6 @@ function insert(item) {
 
   document.getElementById("category").innerHTML = item.data().category;
   document.getElementById("name").innerHTML = item.data().name;
-  console.log(item.id);
   document.getElementById("name").name = item.id;
 }
 
