@@ -6,6 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utrf-8"/>
         <link href="hci_main_page.css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap" rel="stylesheet">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
     <body>
         <div id = "parent">
@@ -28,28 +29,42 @@
 
             <div class = "words" id ="view_all">View all</div>
             <form>
-            <button type="button" id = "all_button" formaction = "./hci_all.html"></button>
+            <button type="button" class = "next_items" id = "all_button"></input>
             </form>
 
-            <div class = "words" id = "tops">Top</div> 
+            <div class = "words" id = "tops">Tops</div> 
             <form>
-            <button type="submit" id = "tops_button" formaction = "./hci_tops.html"></button>
+            <button type="button" class = "next_items" id = "tops_button"></button>
             </form>
 
             <div class = "words" id = "bottom">Bottom</div>
             <form>
-            <button type="submit" id = "bottom_button" formaction = "./hci_bottom.html"></button>
+            <button type="button" class = "next_items" id = "bottom_button"></button>
             </form>
 
             <div class = "words" id = "outer">Outerwear</div>
             <form>
-            <button type="submit" id = "outer_button" formaction = "./hci_outer.html"></button>
+            <button type="button" class = "next_items" id = "outer_button"></button>
             </form>
 
             <div class = "words" id = "shoes">Shoes</div>
             <form>
-            <button type="submit" id = "shoes_button" formaction = "./hci_shoes.html"></button>
+            <button type="button" class = "next_items" id = "shoes_button"></button>
             </form>
+
+            <script>
+                all = document.getElementById("all_button");
+                top = document.getElementById("tops_button");
+                bottoms = document.getElementById("bottom_button");
+                outer = document.getElementById("outer_button");
+                shoes = document.getElementById("shoes_button");
+
+                all.onclick = function(){localStorage.setItem('name', 'all'); location.href = "hci_items.html";};
+                top.onclick = function(){localStorage.setItem('name', 'tops'); location.href = "hci_items.html";};
+                bottom.onclick = function(){localStorage.setItem('name', 'bottom'); location.href = "hci_items.html";};
+                outer.onclick = function(){localStorage.setItem('name', 'outer');location.href = "hci_items.html";};
+                shoes.onclick = function(){localStorage.setItem('name', 'shoes'); location.href = "hci_items.html";};
+            </script>
 
             <div class = "line" id ="line_1"></div>
             <div class = "line" id ="line_2"></div>
