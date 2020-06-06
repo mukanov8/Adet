@@ -1,0 +1,22 @@
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+    background-color: white;
+}
+.row-content {
+    margin: 10px auto;
+    padding: 50px 0px 0px 0px;
+}
+
+/* #allComments {
+    padding: 10px 0px 50px 0px;
+} */
+.content {
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+}
+.text {
+    word-break: break-word!important
+}
