@@ -1,0 +1,30 @@
+.bottom {
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.container-fluid {
+  margin-top: -10px;
+}
+
+.thumbnail {
+  margin-top: -4px;
+  margin-bottom: -10px;
+}
+
+#name {
+  margin-top: -2px;
+}
+
+#category {
+  margin-left: -5px;
+  margin-bottom: -10px;
+}
+
+#back {
+  margin-left: -35px;
+  margin-top: -15px;
+  margin-bottom: -10px;
+}
