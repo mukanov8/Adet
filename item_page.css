@@ -1,8 +1,19 @@
 .bottom {
   overflow: hidden;
   bottom: 0;
+  margin-top: -20px;
   width: 100%;
 }
+
+.modal-dialog {
+  position: absolute;
+  top: 35%;
+  transform: translate(-50%, -50%);
+}
+
+/* #mainContainer {
+  max-width: 600px;
+} */
 
 .container-fluid {
   margin-top: -10px;
@@ -15,6 +26,15 @@
 
 #name {
   margin-top: -2px;
+}
+
+#notification {
+  margin-top: -10px;
+}
+
+.caption {
+  margin-bottom: -5px;
+  margin-bottom: -5px;
 }
 
 #timesWornBar {

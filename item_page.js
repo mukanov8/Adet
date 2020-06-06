@@ -8,14 +8,16 @@ $(document).ready(function () {
       });
     });
 
-  // Create a reference to the file we want to download
-  var starsRef = storage.child("hoodie.jpg");
-
-  // Get the download URL
-  starsRef.getDownloadURL().then(function (url) {
-    document.getElementById("image").src = url;
-    document.getElementById("imageRef").href = url;
-  });
+  // If the user is not logged in, hide some functions.
+  if (!getCookie("userId")) {
+    document.getElementById("minus").hidden = true;
+    document.getElementById("plus").hidden = true;
+    document.getElementById("back").hidden = true;
+  } else {
+    document.getElementById("minus").hidden = false;
+    document.getElementById("plus").hidden = false;
+    document.getElementById("back").hidden = false;
+  }
 
   // Increasing and decreasing timesWorn
   document.getElementById("plus").addEventListener("click", function () {
@@ -53,6 +55,15 @@ $(document).ready(function () {
 });
 
 function insert(item) {
+  // Create a reference to the file we want to download
+  var starsRef = storage.child(item.data().image);
+
+  // Get the download URL
+  starsRef.getDownloadURL().then(function (url) {
+    document.getElementById("image").src = url;
+    document.getElementById("imageRef").href = url;
+  });
+
   var temp = item.data().boughtOn.toDate();
   document.getElementById("boughtOn").innerHTML =
     temp.getMonth() + "/" + temp.getDate() + "/" + temp.getFullYear();
@@ -72,4 +83,10 @@ function insert(item) {
   document.getElementById("name").innerHTML = item.data().name;
   console.log(item.id);
   document.getElementById("name").name = item.id;
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
 }
