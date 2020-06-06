@@ -12,10 +12,14 @@ $(document).ready(function () {
   document.getElementById("plus").addEventListener("click", function () {
     document.getElementById("timesWorn").innerHTML =
       parseInt(document.getElementById("timesWorn").innerHTML) + 1;
+    today = new Date();
+    document.getElementById("lastWorn").innerHTML =
+      today.getDate() + "/" + today.getMonth() + "/" + today.getFullYear();
     db.collection("items")
       .doc(document.getElementById("name").name)
       .update({
         timesWorn: parseInt(document.getElementById("timesWorn").innerHTML),
+        lastWorn: firebase.firestore.Timestamp.fromDate(new Date()),
       });
   });
   document.getElementById("minus").addEventListener("click", function () {
@@ -27,6 +31,16 @@ $(document).ready(function () {
         timesWorn: parseInt(document.getElementById("timesWorn").innerHTML),
       });
   });
+
+  // Entering comment box
+  // document.getElementById("comments").addEventListener("click", function (){
+
+  // });
+
+  // Send request if share button is pressed
+  // document.getElementById("share").addEventListener("click", function (){
+
+  // });
 });
 
 function insert(item) {
