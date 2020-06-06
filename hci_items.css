@@ -1,0 +1,162 @@
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+html{
+box-sizing: border-box;
+overflow: scroll;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+#parent{
+    position: absolute;
+    margin:0px;
+    padding: 0px;
+    border: none;
+    width: 375px;
+    height: 812px;
+}
+
+
+#back_button{
+    position: absolute;
+    width: 47px;
+    height: 42px;
+    left: 0px;
+    top: 52px;
+    z-index:3;
+}
+#arrow{
+    position: absolute;
+    width:100%;
+}
+
+#arrow_button{
+    width:100%;
+    height: 100%;
+    z-index: 4;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    outline:none;
+}
+
+button{
+    position: absolute;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    outline:none;
+    width: 90%;
+    height: 90%;
+}
+#title_box{
+    position: absolute;
+    width: 375px;
+    height: 56px;
+    left: 0px;
+    top: 46px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    }
+
+#title{
+    position: absolute;
+    width: 158px;
+    height: 46px;
+    left: 109px;
+    top: 46px;
+
+    font-family: Sahitya;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 56px;
+    text-align: center;
+
+    color: #000000;
+    z-index:2;
+}
+
+.rectangle{
+    position: absolute;
+    width: 375px;
+    height: 38px;
+    left: 0px;
+    background: #E5E5E5;
+    font-family: Sahitya;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 37px;
+    text-align: center;
+}
+
+#rectangle_1{top: 102px;}
+#rectangle_2{top: 301px;}
+#rectangle_3{top: 514px;}
+
+#tshirts{
+    position: absolute;
+    width: 100%;
+    height: 143px;
+    left: 0px;
+    top: 146px;
+    overflow-x: scroll;
+}
+
+#yellow_tshirt{
+    position: relative;
+    height: 142px;
+    left: 0px;
+    }
+    
+#pink_hoodie{
+    position: absolute;
+    width: 109px;
+    height: 154px;
+    left: 0px;
+    top: 342px;
+}
+
+#ph{
+    position: absolute;
+    width: 109px;
+    height: 148px;
+    left: 0px;
+    top: 6px;
+}
+
+#pink_hoodie_button{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    outline:none;
+    z-index:1;
+}
+
+#black_hoodie{
+    position: absolute;
+    width: 113px;
+    height: 121px;
+    left: 111px;
+    top: 361px;
+}
+#shirt{
+    position: absolute;
+    height: 122px;
+    left: 0px;
+    top: 558px;
+}
