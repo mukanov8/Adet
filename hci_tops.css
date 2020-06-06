@@ -106,25 +106,19 @@ button{
 
 #tshirts{
     position: absolute;
-    width: 437px;
+    width: 100%;
     height: 143px;
     left: 0px;
     top: 146px;
+    overflow-x: scroll;
 }
 
 #yellow_tshirt{
-    position: absolute;
+    position: relative;
     height: 142px;
     left: 0px;
-    top: 147px;
     }
-
-#blue_tshirt{
-    position: absolute;
-    height: 135px;
-    left: 130px;
-    top: 146px;
-}
+    
 #pink_hoodie{
     position: absolute;
     width: 109px;
