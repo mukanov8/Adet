@@ -124,7 +124,7 @@ button{
     height:100%;
 }
 .button{
-    position: relative;
+    position: absolute;
     height: 100%;
     width: 100%;
     background-color: Transparent;
@@ -132,7 +132,7 @@ button{
     border: none;
     cursor:pointer;
     outline:none;
-    z-index:1;
+    z-index:2;
 }
 
 
