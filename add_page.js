@@ -15,8 +15,8 @@ $(document).ready(function () {
   $("#imgInp").change(function() {
     readURL(this);
   });
-  document.getElementById('purchase_date').value = new Date().toISOString().substring(0, 10);
-
+  document.getElementById('item_date').value = new Date().toISOString().substring(0, 10);
+  
   // $('.form-group').on('change', function(e){
   //   console.log(e.target.options[e.target.selectedIndex].value);
   //   console.log(e.target.options[e.target.selectedIndex].text);
@@ -24,9 +24,10 @@ $(document).ready(function () {
   // document.getElementById('input_img')
   $("#saveBtn" ).click(function() {
     alert( "Handler for .click() called." );
+    console.log(document.getElementById('item_date').value);
+    console.log("sssssss");
     // Upload file and metadata to the object 'images/mountains.jpg'
     var uploadTask = storage.child('images/'+"ayan" ).put();
-
     // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
       function(snapshot) {
