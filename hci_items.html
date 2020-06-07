@@ -22,28 +22,13 @@
                     }
                 </script>
             </div>
-            <script>
-                var cat = localStorage.getItem('name');
-                console.log(cat);
-            </script>
 
             <div id = "title_box"></div>
-            <div id = "title">TOP</div>
-            <div class = "rectangle" id ="rectangle_1">T-Shirt</div>
-            <div id = "tshirts">
-                <img src = "./images/yellow_tshirt.jpg" id  = "yellow_tshirt">
-            </div>
-            <div class ="rectangle" id ="rectangle_2">Hoodie</div>
-            <div id = "pink_hoodie">
-                <img src = "./images/pink_hoodie.jpeg" id  = "ph">
-                <button type="button" id = "pink_hoodie_button"></button>
-            </div>
-            <img src = "./images/black_hoodie.jpg" id  = "black_hoodie">
-            <div class = "rectangle" id ="rectangle_3">Shirt</div>
-            <img src = "./images/shirt.jpg" id = "shirt"/>
+            <div id = "title"></div>
         </div>
+
+
         <script>
-            // Your web app's Firebase configuration
             var firebaseConfig = {
               apiKey: "AIzaSyB4LQ5xwbSDSRPLP5OzaAv0wZJzIoqHAsY",
               authDomain: "adet-85cc8.firebaseapp.com",
@@ -53,7 +38,6 @@
               messagingSenderId: "5031429336",
               appId: "1:5031429336:web:8bc660dfd832ba29a143ad",
             };
-            // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
             const db = firebase.firestore();
             var storage = firebase.storage().ref();
