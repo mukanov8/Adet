@@ -33,6 +33,7 @@ body{
 }
 .custom-select{
 	height: 34px;
+	text-indent: 9px;
 	border-color: rgb(204,204,204);
 	border-radius: 4px;
 	text-decoration-color: black;
