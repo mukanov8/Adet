@@ -66,6 +66,8 @@
             
         </div>
         <script>
+            if (!getCookie("userId")) window.location.href = "signup.html"
+
             var firebaseConfig = {
               apiKey: "AIzaSyB4LQ5xwbSDSRPLP5OzaAv0wZJzIoqHAsY",
               authDomain: "adet-85cc8.firebaseapp.com",
@@ -78,6 +80,11 @@
             firebase.initializeApp(firebaseConfig);
             const db = firebase.firestore();
             var storage = firebase.storage().ref();
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            }
         </script>
         <script src="jquery/js/jquery-1.9.0.min.js"></script>
         <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>

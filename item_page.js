@@ -1,9 +1,6 @@
 $(document).ready(function () {
   // retrieve clothes item data from firebase.
   var item_id = localStorage.getItem("item_id");
-  if (item_id == null) {
-    item_id = "DKc6v3FIBoDkaj2HtCzo";
-  }
   db.collection("items")
     .doc(item_id)
     .get()
@@ -51,6 +48,11 @@ $(document).ready(function () {
     location.href = "./hci_items.html";
   };
 
+  // Send request if share button is pressed
+  // document.getElementById("share").addEventListener("click", function (){
+
+  // });
+
   // Entering comment box
   document.getElementById("comments").addEventListener("click", function () {
     db.collection("items")
@@ -62,10 +64,10 @@ $(document).ready(function () {
       });
   });
 
-  // Send request if share button is pressed
-  // document.getElementById("share").addEventListener("click", function (){
-
-  // });
+  // Delete
+  document.getElementById("delete").addEventListener("click", function () {
+    db.collection("items").doc(item_id).delete(item_id);
+  });
 });
 
 function insert(item) {
@@ -78,6 +80,7 @@ function insert(item) {
     document.getElementById("imageRef").href = url;
   });
 
+  document.getElementById("description").innerHTML = item.data().description;
   var temp = item.data().boughtOn.toDate();
   document.getElementById("boughtOn").innerHTML =
     temp.getMonth() + "/" + temp.getDate() + "/" + temp.getFullYear();

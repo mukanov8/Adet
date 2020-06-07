@@ -17,8 +17,9 @@ body{
     margin:0px;
     padding: 0px;
     border: none;
-    width: 375px;
-    height: 812px;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
     top: -30px;
 }
 
@@ -59,7 +60,7 @@ button{
 }
 #title_box{
     position: relative;
-    width: 375px;
+    width: 100%;
     height: 56px;
     left: 0px;
     top: 46px;
@@ -71,9 +72,9 @@ button{
 
 #title{
     position: absolute;
-    width: 158px;
+    width: 100%;
     height: 46px;
-    left: 109px;
+    /*left: 109px;*/
     top: 46px;
 
     font-family: Sahitya;
@@ -89,7 +90,7 @@ button{
 
 .rectangle{
     position: relative;
-    width: 375px;
+    width: 100%;
     height: 38px;
     left: 0px;
     background: #E5E5E5;
@@ -135,19 +136,3 @@ button{
     z-index:2;
 }
 
-
-#pink_hoodie{
-    position: absolute;
-    width: 109px;
-    height: 154px;
-    left: 0px;
-    top: 342px;
-}
-
-#ph{
-    position: absolute;
-    width: 109px;
-    height: 148px;
-    left: 0px;
-    top: 6px;
-}
