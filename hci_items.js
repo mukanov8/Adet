@@ -56,7 +56,7 @@ $(document).ready(function() {
           a.appendChild(createItem(url,element)); 
           $('.button').click(function(){
             localStorage.setItem('item_id',this.id);
-            location.href = "item_page.html";
+            location.href = "index.html";
           });
         });
       });
@@ -79,7 +79,7 @@ $(document).ready(function() {
           a.appendChild(createItem(url,element)); 
           $('.button').click(function(){
             localStorage.setItem('item_id',this.id);
-            location.href = "item_page.html";
+            location.href = "index.html";
           });
         });
       });
@@ -106,7 +106,7 @@ $(document).ready(function() {
           }
           $('.button').click(function(){
             localStorage.setItem('item_id',this.id);
-            location.href = "item_page.html";
+            location.href = "index.html";
           });
         });
     });
