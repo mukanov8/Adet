@@ -6,11 +6,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utrf-8"/>
         <link href="hci_main_page.css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap" rel="stylesheet">
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
     </head>
     <body>
         <div id = "parent">
-            <img src = "./images/strokes.png" id = "strokes">
             <div id = "title_box">
                 <div id = "title">ADET</div>
             </div>
@@ -21,7 +22,7 @@
                 <img src = "./images/user_body.png" id = "user_body">
             </div>
             <div id = "usr_wrd">User's Wardrobe</div>
-            <div id = "items_count">Items: </div>
+            <div id = "items_count"></div>
             <div id = "divide_bar"></div>
             <form>
                 <input type="text" id="search_bar" name="search_request" placeholder = "search...">
@@ -52,20 +53,6 @@
             <button type="button" class = "next_items" id = "shoes_button"></button>
             </form>
 
-            <script>
-                all = document.getElementById("all_button");
-                t = document.getElementById("tops_button");
-                bottoms = document.getElementById("bottom_button");
-                outer = document.getElementById("outer_button");
-                shoes = document.getElementById("shoes_button");
-
-                all.onclick = function(){localStorage.setItem('name', 'all'); location.href = "hci_items.html";};
-                t.onclick = function(){localStorage.setItem('name', 'top'); location.href = "hci_items.html";};
-                bottoms.onclick = function(){localStorage.setItem('name', 'bottom'); location.href = "hci_items.html";};
-                outer.onclick = function(){localStorage.setItem('name', 'outer');location.href = "hci_items.html";};
-                shoes.onclick = function(){localStorage.setItem('name', 'shoes'); location.href = "hci_items.html";};
-            </script>
-
             <div class = "line" id ="line_1"></div>
             <div class = "line" id ="line_2"></div>
             <div class = "line" id ="line_3"></div>
@@ -78,6 +65,22 @@
             </div>
             
         </div>
-
+        <script>
+            var firebaseConfig = {
+              apiKey: "AIzaSyB4LQ5xwbSDSRPLP5OzaAv0wZJzIoqHAsY",
+              authDomain: "adet-85cc8.firebaseapp.com",
+              databaseURL: "https://adet-85cc8.firebaseio.com",
+              projectId: "adet-85cc8",
+              storageBucket: "adet-85cc8.appspot.com",
+              messagingSenderId: "5031429336",
+              appId: "1:5031429336:web:8bc660dfd832ba29a143ad",
+            };
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            var storage = firebase.storage().ref();
+        </script>
+        <script src="jquery/js/jquery-1.9.0.min.js"></script>
+        <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+        <script src = "./hci_main_page.js"></script>
     </body>
 </html>
