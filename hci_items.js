@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var request = localStorage.getItem('name');
-    document.getElementById("title").innerHTML = request.charAt(0).toUpperCase() + request.slice(1);
+    document.getElementById("title").innerHTML = request.charAt(0).toUpperCase() + request.slice(1).toLowerCase();
     var categories = [];
     var t = 60;
 
