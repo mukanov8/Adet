@@ -38,14 +38,6 @@ input {
             height: 812px;
             top: -30px;
     }
-        #strokes{
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            left: 0px;
-            top: 39px;
-            opacity: 0.6;
-        }
         
         #title_box{
             position: absolute;
