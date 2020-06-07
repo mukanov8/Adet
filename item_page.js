@@ -1,11 +1,14 @@
 $(document).ready(function () {
+  // retrieve clothes item data from firebase.
+  var item_id = localStorage.getItem("item_id");
+  if (item_id == null) {
+    item_id = "DKc6v3FIBoDkaj2HtCzo";
+  }
   db.collection("items")
-    .limit(1)
+    .doc(item_id)
     .get()
-    .then((res) => {
-      res.forEach((element) => {
-        insert(element);
-      });
+    .then((item) => {
+      insert(item);
     });
 
   // If the user is not logged in, hide some functions.
@@ -43,10 +46,21 @@ $(document).ready(function () {
       });
   });
 
-  // Entering comment box
-  // document.getElementById("comments").addEventListener("click", function (){
+  arrow = document.getElementById("back");
+  arrow.onclick = function () {
+    location.href = "./hci_items.html";
+  };
 
-  // });
+  // Entering comment box
+  document.getElementById("comments").addEventListener("click", function () {
+    db.collection("items")
+      .doc(item_id)
+      .get()
+      .then((element) => {
+        location.href =
+          "./comments.html?q=" + item_id + "user=" + element.data().userId;
+      });
+  });
 
   // Send request if share button is pressed
   // document.getElementById("share").addEventListener("click", function (){
@@ -81,7 +95,6 @@ function insert(item) {
 
   document.getElementById("category").innerHTML = item.data().category;
   document.getElementById("name").innerHTML = item.data().name;
-  console.log(item.id);
   document.getElementById("name").name = item.id;
 }
 

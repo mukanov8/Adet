@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
-<!-- 
+    <!-- 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
@@ -16,7 +16,10 @@
     <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
     <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"> -->
 
-    <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0">
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height initial-scale=1.0"
+    />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,21 +29,22 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link href="./add_page.css" rel="stylesheet" />
     <!-- <link href="hci_main_page.css" rel="stylesheet"/> -->
-      
+
     <!-- <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
-    
   </head>
-  <body>
-  
+  <body>  
    <div class="container"  style="width: 100%">
     <div class="row">
       <h1 class="col-xs-1">
@@ -60,7 +64,8 @@
   <div class="container-fluid">
     <div class="form-group">
       <label for="item_name" style="font-family: Sahitya;">Item Name</label>
-      <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea>
+      <input type="text" class="form-control" id="item_name"  style="font-family: Sahitya;" placeholder="E.g. H&M hoodie">
+      <!-- <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea> -->
     </div>
     <div class="form-group">
       <label for="item_description" style="font-family: Sahitya;">Description</label>
@@ -68,35 +73,88 @@
     </div>
     <div class="form-group">
       <label for="purchase_date" class="col-2 col-form-label" style="font-family: Sahitya;">Bought on</label>
-      <div class="col-10">
-        <input class="form-control" type="date" style="font-family: Sahitya; color: gray" id="purchase_date">
+      <div class="col-10 datepicker">
+        <input class="form-control" id="item_date" type="date" style="font-family: Sahitya; color: gray">
       </div>
     </div>
     <div class="form-group">
-      <select class="custom-select" required style="width: 100%"> 
+      <select class="custom-select" id="item_type" required style="width: 100%"> 
         <option value="" >Select yout item type</option>
         <option value="1">Top</option>
         <option value="2">Bottom</option>
         <option value="3">Outerwear</option>
         <option value="4">Shoes</option>
       </select>
+>>>>>>> beb7288735ed0ed46ad8d8178ce876e73e9bf44f
     </div>
-    <div class="form-group">
-      <select class="custom-select" required style="width: 100%"> 
-        <option value="">Select yout item category</option>
-        <option value="5">T-shirt</option>
-        <option value="6">Shirt</option>
-        <option value="7">Hoodie/Sweatshirt</option>
-      </select>
+    <div class="content">
+      <div class="container-fluid">
+        <div class="form-group">
+          <label for="item_name" style="font-family: Sahitya;">Item Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="item_name"
+            style="font-family: Sahitya;"
+            placeholder="E.g. H&M hoodie"
+          />
+          <!-- <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea> -->
+        </div>
+        <div class="form-group">
+          <label for="item_description" style="font-family: Sahitya;"
+            >Description</label
+          >
+          <textarea
+            class="form-control"
+            rows="3"
+            id="item_description"
+            style="font-family: Sahitya;"
+            placeholder="E.g. My favourite hoodie that I wear everyday"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label
+            for="purchase_date"
+            class="col-2 col-form-label"
+            style="font-family: Sahitya;"
+            >Bought on</label
+          >
+          <div class="col-10">
+            <input
+              class="form-control"
+              type="date"
+              style="font-family: Sahitya; color: gray;"
+              id="item_date"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <select
+            class="custom-select"
+            id="item_type"
+            required
+            style="width: 100%;"
+          >
+            <option value="">Select yout item type</option>
+            <option value="1">Top</option>
+            <option value="2">Bottom</option>
+            <option value="3">Outerwear</option>
+            <option value="4">Shoes</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="item_category"
+            placeholder="Write your item category, e.g. hoodie / t-shirt"
+          />
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn" id="saveBtn">Save</button>
+        </div>
+      </div>
     </div>
-    <div class="form-group">
-      <button type="button" class="btn" id="saveBtn"> Save</button>
-    </div>
-  </div>
-</div>
-
-
-
 
     <script>
       // Your web app's Firebase configuration
