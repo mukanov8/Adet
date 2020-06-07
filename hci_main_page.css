@@ -4,14 +4,15 @@
 
 html{
 box-sizing: border-box;
-overflow: scroll;
+    margin: 0px;
+    padding: 0px;
 }
 
 body{
+    margin: 0px;
+    padding: 0px;
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 100%;
 }
 input {
     border-top-style: hidden;
@@ -24,55 +25,49 @@ input {
     outline: none;
   }
 
-        #time_bar{
-        position: absolute;
-        width: 375px;
-        height: 39px;
-        left: 0px;
-        top: 0px;
-    }
         #parent{
             position: absolute;
             margin:0px;
             padding: 0px;
             border: none;
-            width: 375px;
-            height: 812px;
+            width: 100%;
+            height: 100%;
+            max-width: 600px;
             top: -30px;
+            display: flex;
+            justify-content: center;
     }
         
         #title_box{
             position: absolute;
-            width: 88px;
+            width: 100%;/*88px;*/
             height: 56px;
-            left: 143px;
+            /*left: 143px;*/
             top: 39px;
             z-index: 1;
-            }
-        #title{
-            position: absolute;
+            text-align: center;
             font-family: Sahitya;
             font-style: normal;
             font-weight: normal;
             font-size: 36px;
             line-height: 56px;
             color: #000000;
-            text-align: center;
-        }
+            }
         
         #background_user{
             position: absolute;
             width: 375px;
             height: 247px;
-            left: 0px;
+            /*left: 0px;*/
             top: 97px;
+
         }
 
         #user_ellipse{
             position: absolute;
             width: 74px;
             height: 74px;
-            left: 150px;
+            /*left: 150px;*/
             top: 176px;
         }
 
@@ -80,7 +75,7 @@ input {
             position: absolute;
             width: 49px;
             height: 49px;
-            left: 163px;
+            /*left: 163px;*/
             top: 189px;
         }
 
@@ -102,11 +97,12 @@ input {
 
         #usr_wrd{
             position: absolute;
-            width: 240px;
+            width: 100%;
             height: 56px;
-            left: 75px;
+            /*left: 75px;*/
             top: 272px;
 
+            text-align:center;
             font-family: Sahitya;
             font-style: normal;
             font-weight: normal;
@@ -134,7 +130,7 @@ input {
 
         #divide_bar{
             position: absolute;
-            width: 375px;
+            width: 100%;
             height: 2px;
             left: 0px;
             top: 377px;
@@ -143,14 +139,14 @@ input {
         }
         #search_bar{
             position: absolute;
-            width: 200px;
+            width: 50%;
             height: 25px;
             left: 10px;
             top: 393px;
         }
         .line{
             position: absolute;
-            width: 385px;
+            width: 100%;
             height: 0px;
 
             opacity: 0.5;
@@ -267,10 +263,11 @@ input {
 
         #add{
             position:absolute;
-            left: 282px;
+            right: 50px;
             top: 760px;
             width:60px;
             height: 60px;
+
         }
         #add_button{
             position: absolute;
