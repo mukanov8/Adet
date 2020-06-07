@@ -36,6 +36,14 @@ $( document ).ready(function() {
     function submit() {
         var commentText = commentBox.value
         var id = nameBox.value
+        if (id.replace(/\s/g, '').length < 2) {
+            alert("Enter a valid name")
+            return
+        }
+        if (commentText.replace(/\s/g, '').length < 2) {
+            alert("Enter a valid comment")
+            return
+        }
         var dt = (new Date()).toString().substring(0,10)
         var entry = firebase.database().ref('/comments/').child(postId)
         comments.comments.push({name: id, comment: commentText, date: dt})
@@ -46,7 +54,7 @@ $( document ).ready(function() {
         getName()
         commentBox.value = ""
     }
-    
+
     function createData() {
         var entry = firebase.database().ref('/comments/').child(postId)
         entry.set({comments: [{}]})

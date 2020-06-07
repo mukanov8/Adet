@@ -6,10 +6,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utrf-8"/>
         <link href="hci_main_page.css" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
     </head>
     <body>
         <div id = "parent">
-            <img src = "./images/strokes.png" id = "strokes">
             <div id = "title_box">
                 <div id = "title">ADET</div>
             </div>
@@ -20,7 +22,7 @@
                 <img src = "./images/user_body.png" id = "user_body">
             </div>
             <div id = "usr_wrd">User's Wardrobe</div>
-            <div id = "items_count">Items: </div>
+            <div id = "items_count"></div>
             <div id = "divide_bar"></div>
             <form>
                 <input type="text" id="search_bar" name="search_request" placeholder = "search...">
@@ -28,27 +30,27 @@
 
             <div class = "words" id ="view_all">View all</div>
             <form>
-            <button type="button" id = "all_button" formaction = "./hci_all.html"></button>
+            <button type="button" class = "next_items" id = "all_button"></input>
             </form>
 
-            <div class = "words" id = "tops">Top</div> 
+            <div class = "words" id = "tops">Tops</div> 
             <form>
-            <button type="submit" id = "tops_button" formaction = "./hci_tops.html"></button>
+            <button type="button" class = "next_items" id = "tops_button"></button>
             </form>
 
             <div class = "words" id = "bottom">Bottom</div>
             <form>
-            <button type="submit" id = "bottom_button" formaction = "./hci_bottom.html"></button>
+            <button type="button" class = "next_items" id = "bottom_button"></button>
             </form>
 
             <div class = "words" id = "outer">Outerwear</div>
             <form>
-            <button type="submit" id = "outer_button" formaction = "./hci_outer.html"></button>
+            <button type="button" class = "next_items" id = "outer_button"></button>
             </form>
 
             <div class = "words" id = "shoes">Shoes</div>
             <form>
-            <button type="submit" id = "shoes_button" formaction = "./hci_shoes.html"></button>
+            <button type="button" class = "next_items" id = "shoes_button"></button>
             </form>
 
             <div class = "line" id ="line_1"></div>
@@ -63,6 +65,22 @@
             </div>
             
         </div>
-
+        <script>
+            var firebaseConfig = {
+              apiKey: "AIzaSyB4LQ5xwbSDSRPLP5OzaAv0wZJzIoqHAsY",
+              authDomain: "adet-85cc8.firebaseapp.com",
+              databaseURL: "https://adet-85cc8.firebaseio.com",
+              projectId: "adet-85cc8",
+              storageBucket: "adet-85cc8.appspot.com",
+              messagingSenderId: "5031429336",
+              appId: "1:5031429336:web:8bc660dfd832ba29a143ad",
+            };
+            firebase.initializeApp(firebaseConfig);
+            const db = firebase.firestore();
+            var storage = firebase.storage().ref();
+        </script>
+        <script src="jquery/js/jquery-1.9.0.min.js"></script>
+        <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+        <script src = "./hci_main_page.js"></script>
     </body>
 </html>

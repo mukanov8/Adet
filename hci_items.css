@@ -19,6 +19,7 @@ body{
     border: none;
     width: 375px;
     height: 812px;
+    top: -30px;
 }
 
 
@@ -57,7 +58,7 @@ button{
     height: 90%;
 }
 #title_box{
-    position: absolute;
+    position: relative;
     width: 375px;
     height: 56px;
     left: 0px;
@@ -87,7 +88,7 @@ button{
 }
 
 .rectangle{
-    position: absolute;
+    position: relative;
     width: 375px;
     height: 38px;
     left: 0px;
@@ -100,25 +101,42 @@ button{
     text-align: center;
 }
 
-#rectangle_1{top: 102px;}
-#rectangle_2{top: 301px;}
-#rectangle_3{top: 514px;}
-
-#tshirts{
-    position: absolute;
+.containers{
+    position: relative;
     width: 100%;
     height: 143px;
     left: 0px;
-    top: 146px;
     overflow-x: scroll;
 }
-
-#yellow_tshirt{
-    position: relative;
-    height: 142px;
-    left: 0px;
-    }
     
+.one{
+
+    position: relative;
+    height: 143px;
+    width:143px;
+    display: inline-flex;
+    justify-content: center;
+}
+.photo{
+    position:absolute;
+    display: block;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    outline:none;
+    z-index:1;
+}
+
+
 #pink_hoodie{
     position: absolute;
     width: 109px;
@@ -133,30 +151,4 @@ button{
     height: 148px;
     left: 0px;
     top: 6px;
-}
-
-#pink_hoodie_button{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    outline:none;
-    z-index:1;
-}
-
-#black_hoodie{
-    position: absolute;
-    width: 113px;
-    height: 121px;
-    left: 111px;
-    top: 361px;
-}
-#shirt{
-    position: absolute;
-    height: 122px;
-    left: 0px;
-    top: 558px;
 }
