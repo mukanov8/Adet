@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<!-- 
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> -->
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Adding Page</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="./add_page.css" rel="stylesheet" />
+    <!-- <link href="hci_main_page.css" rel="stylesheet"/> -->
+      
+    <!-- <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
+    
+  </head>
+  <body>
+  
+   <div class="container"  style="width: 100%">
+    <div class="row">
+      <h1 class="col-xs-1">
+        <img class="btn btn-lg" id="back" src="images/image 7.png" />
+      </h1>
+      <h1 class="text-center" id="category" style="font-family: Sahitya">New Item</h1>
+      <h1 class="col-xs-1"></h1>
+    </div>
+  </div>
+  <div class="custom-file" style="max-width: 400px;">
+    <form runat="server">
+      <img id="input_img" src="images/photo_placeholder.png" class="img-responsive" style="width: 50%; padding: 10px;" alt="your image" />
+      <input type='file' style="font-family: Sahitya;" id="imgInp" accept="image/*" />
+    </form>
+  </div>
+<div class = "content">
+  <div class="container-fluid">
+    <div class="form-group">
+      <label for="item_name" style="font-family: Sahitya;">Item Name</label>
+      <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="item_description" style="font-family: Sahitya;">Description</label>
+      <textarea class="form-control" rows="3" id="item_description" style="font-family: Sahitya;"placeholder="E.g. My favourite hoodie that I wear everyday"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="purchase_date" class="col-2 col-form-label" style="font-family: Sahitya;">Bought on</label>
+      <div class="col-10">
+        <input class="form-control" type="date" style="font-family: Sahitya; color: gray" id="purchase_date">
+      </div>
+    </div>
+    <div class="form-group">
+      <select class="custom-select" required style="width: 100%"> 
+        <option value="" >Select yout item type</option>
+        <option value="1">Top</option>
+        <option value="2">Bottom</option>
+        <option value="3">Outerwear</option>
+        <option value="4">Shoes</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <select class="custom-select" required style="width: 100%"> 
+        <option value="">Select yout item category</option>
+        <option value="5">T-shirt</option>
+        <option value="6">Shirt</option>
+        <option value="7">Hoodie/Sweatshirt</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn" id="saveBtn"> Save</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyB4LQ5xwbSDSRPLP5OzaAv0wZJzIoqHAsY",
+        authDomain: "adet-85cc8.firebaseapp.com",
+        databaseURL: "https://adet-85cc8.firebaseio.com",
+        projectId: "adet-85cc8",
+        storageBucket: "adet-85cc8.appspot.com",
+        messagingSenderId: "5031429336",
+        appId: "1:5031429336:web:8bc660dfd832ba29a143ad",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      var storage = firebase.storage().ref();
+    </script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+
+    <script src="./add_page.js"></script>
+  </body>
+</html>

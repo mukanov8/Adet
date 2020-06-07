@@ -36,15 +36,8 @@ input {
             border: none;
             width: 375px;
             height: 812px;
+            top: -30px;
     }
-        #strokes{
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            left: 0px;
-            top: 39px;
-            opacity: 0.6;
-        }
         
         #title_box{
             position: absolute;
@@ -210,13 +203,12 @@ input {
             top: 450px;
         }
 
-        #all_button{
+        .next_items{
             position:absolute;
             height:55px;
             width:100%;
             left: 0px;
             right:0px;
-            top: 434px;
             background-color: transparent;
             background-repeat:no-repeat;
             border: none;
@@ -225,50 +217,35 @@ input {
             z-index:2;
         }
 
+        #all_button{
+            top: 434px;
+        }
+        #tops_button{
+            top: 495px;
+        }
+        #bottom_button{
+            top: 553px;
+        }
+        #outer_button{
+            top: 608px;
+        }
+        #shoes_button{
+            top: 663px;
+        }
 
        #tops{
-            position:absolute;
-            z-index: 0;
+            z-index: 1;
             width: 65px;
             height: 21px;
-            left: 20px;
-            top: 505px;
+            left: 5px;
+            top: 75px;
         }
 
-        #tops_button{
-            position:absolute;
-            height:55px;
-            width:100%;
-            left: 0px;
-            right:0px;
-            top: 495px;
-            background-color: transparent;
-            background-repeat:no-repeat;
-            border: none;
-            cursor:pointer;
-            outline:none;
-            z-index:2;
-        }
         #bottom{
             width: 95px;
             height: 23px;
             left: 20px;
             top: 562px;
-        }
-
-        #bottom_button{
-            position:absolute;
-            height:55px;
-            width:100%;
-            left: 0px;
-            right:0px;
-            top: 553px;
-            background-color: transparent;
-            background-repeat:no-repeat;
-            border: none;
-            cursor:pointer;
-            outline:none;
-            z-index:2;
         }
 
         #outer{
@@ -278,41 +255,12 @@ input {
             top: 625px;
         }
 
-        #outer_button{
-            position:absolute;
-            height:55px;
-            width:100%;
-            left: 0px;
-            right:0px;
-            top: 608px;
-            background-color: transparent;
-            background-repeat:no-repeat;
-            border: none;
-            cursor:pointer;
-            outline:none;
-            z-index:2;
-        }
 
         #shoes{
             width: 95px;
             height: 23px;
             left: 20px;
             top: 690px;
-        }
-
-        #shoes_button{
-            position:absolute;
-            height:55px;
-            width:100%;
-            left: 0px;
-            right:0px;
-            top: 663px;
-            background-color: transparent;
-            background-repeat:no-repeat;
-            border: none;
-            cursor:pointer;
-            outline:none;
-            z-index:2;
         }
 
         #add{
