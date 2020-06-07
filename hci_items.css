@@ -107,10 +107,11 @@ button{
     height: 143px;
     left: 0px;
     overflow-x: scroll;
+    overflow-y:hidden;
+    white-space: nowrap;
 }
     
 .one{
-
     position: relative;
     height: 143px;
     width:143px;
@@ -118,14 +119,12 @@ button{
     justify-content: center;
 }
 .photo{
-    position:absolute;
+    position:relative;
     display: block;
     height:100%;
-    margin-left: auto;
-    margin-right: auto;
 }
 .button{
-    position: absolute;
+    position: relative;
     height: 100%;
     width: 100%;
     background-color: Transparent;

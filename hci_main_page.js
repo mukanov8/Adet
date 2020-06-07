@@ -1,5 +1,6 @@
 $(document).ready(function() {
     var items = 0;
+    document.getElementById("usr_wrd").innerHTML = postId + "'s Wardrobe";
     db.collection("items").get()
     .then((res) => {
       res.forEach((element) => {

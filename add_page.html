@@ -44,34 +44,48 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> -->
   </head>
-  <body>
-    <div class="container" style="width: 100%;">
-      <div class="row">
-        <h1 class="col-xs-1">
-          <img class="btn btn-lg" id="back" src="images/image 7.png" />
-        </h1>
-        <h1 class="text-center" id="category" style="font-family: Sahitya;">
-          New Item
-        </h1>
-        <h1 class="col-xs-1"></h1>
+  <body>  
+   <div class="container"  style="width: 100%">
+    <div class="row">
+      <h1 class="col-xs-1">
+        <img class="btn btn-lg" id="back" src="images/image 7.png" />
+      </h1>
+      <h1 class="text-center" id="category" style="font-family: Sahitya">New Item</h1>
+      <h1 class="col-xs-1"></h1>
+    </div>
+  </div>
+  <div class="custom-file" style="max-width: 400px;">
+    <form runat="server">
+      <img id="input_img" src="images/photo_placeholder.png" class="img-responsive" style="width: 50%; padding: 10px;" alt="your image" />
+      <input type='file' style="font-family: Sahitya;" id="imgInp" accept="image/*" />
+    </form>
+  </div>
+<div class = "content">
+  <div class="container-fluid">
+    <div class="form-group">
+      <label for="item_name" style="font-family: Sahitya;">Item Name</label>
+      <input type="text" class="form-control" id="item_name"  style="font-family: Sahitya;" placeholder="E.g. H&M hoodie">
+      <!-- <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea> -->
+    </div>
+    <div class="form-group">
+      <label for="item_description" style="font-family: Sahitya;">Description</label>
+      <textarea class="form-control" rows="3" id="item_description" style="font-family: Sahitya;"placeholder="E.g. My favourite hoodie that I wear everyday"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="purchase_date" class="col-2 col-form-label" style="font-family: Sahitya;">Bought on</label>
+      <div class="col-10">
+        <input class="form-control" id="item_date" type="date" style="font-family: Sahitya; color: gray">
       </div>
     </div>
-    <div class="custom-file" style="max-width: 400px;">
-      <form runat="server">
-        <img
-          id="input_img"
-          src="images/photo_placeholder.png"
-          class="img-responsive"
-          style="width: 50%; padding: 10px;"
-          alt="your image"
-        />
-        <input
-          type="file"
-          style="font-family: Sahitya;"
-          id="imgInp"
-          accept="image/*"
-        />
-      </form>
+    <div class="form-group">
+      <select class="custom-select" id="item_type" required style="width: 100%"> 
+        <option value="" >Select yout item type</option>
+        <option value="1">Top</option>
+        <option value="2">Bottom</option>
+        <option value="3">Outerwear</option>
+        <option value="4">Shoes</option>
+      </select>
+>>>>>>> beb7288735ed0ed46ad8d8178ce876e73e9bf44f
     </div>
     <div class="content">
       <div class="container-fluid">
