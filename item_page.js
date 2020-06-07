@@ -1,11 +1,14 @@
 $(document).ready(function () {
+  // retrieve clothes item data from firebase.
+  var item_id = localStorage.getItem("item_id");
+  if (item_id == null) {
+    item_id = "DKc6v3FIBoDkaj2HtCzo";
+  }
   db.collection("items")
-    .limit(1)
+    .doc(item_id)
     .get()
-    .then((res) => {
-      res.forEach((element) => {
-        insert(element);
-      });
+    .then((item) => {
+      insert(item);
     });
 
   // If the user is not logged in, hide some functions.
@@ -81,7 +84,6 @@ function insert(item) {
 
   document.getElementById("category").innerHTML = item.data().category;
   document.getElementById("name").innerHTML = item.data().name;
-  console.log(item.id);
   document.getElementById("name").name = item.id;
 }
 

@@ -60,7 +60,8 @@
   <div class="container-fluid">
     <div class="form-group">
       <label for="item_name" style="font-family: Sahitya;">Item Name</label>
-      <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea>
+      <input type="text" class="form-control" id="item_name"  style="font-family: Sahitya;" placeholder="E.g. H&M hoodie">
+      <!-- <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea> -->
     </div>
     <div class="form-group">
       <label for="item_description" style="font-family: Sahitya;">Description</label>
@@ -69,11 +70,11 @@
     <div class="form-group">
       <label for="purchase_date" class="col-2 col-form-label" style="font-family: Sahitya;">Bought on</label>
       <div class="col-10">
-        <input class="form-control" type="date" style="font-family: Sahitya; color: gray" id="purchase_date">
+        <input class="form-control" id="item_date" type="date" style="font-family: Sahitya; color: gray" id="purchase_date">
       </div>
     </div>
     <div class="form-group">
-      <select class="custom-select" required style="width: 100%"> 
+      <select class="custom-select" id="item_type" required style="width: 100%"> 
         <option value="" >Select yout item type</option>
         <option value="1">Top</option>
         <option value="2">Bottom</option>
@@ -82,12 +83,7 @@
       </select>
     </div>
     <div class="form-group">
-      <select class="custom-select" required style="width: 100%"> 
-        <option value="">Select yout item category</option>
-        <option value="5">T-shirt</option>
-        <option value="6">Shirt</option>
-        <option value="7">Hoodie/Sweatshirt</option>
-      </select>
+      <input type="text" class="form-control" id="item_category" placeholder="Write your item category, e.g. hoodie / t-shirt">
     </div>
     <div class="form-group">
       <button type="button" class="btn" id="saveBtn"> Save</button>
