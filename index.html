@@ -63,7 +63,9 @@
             class="img-responsive"
             style="width: 60%;"
           />
-          <p class="caption text-center">This hoodies is so hot!</p>
+          <p class="caption text-center" id="description">
+            This hoodies is so hot!
+          </p>
         </a>
       </div>
       <div class="container-fluid">
@@ -110,7 +112,12 @@
             style="font-size: 41px;"
           ></span>
         </div>
-        <div class="btn" id="delete" data-toggle="modal" data-target="#myModal">
+        <div
+          class="btn"
+          id="deleteBar"
+          data-toggle="modal"
+          data-target="#myModal"
+        >
           <span
             class="iconify"
             data-inline="false"
@@ -134,6 +141,7 @@
                 type="button"
                 class="btn btn-default"
                 data-dismiss="modal"
+                id="delete"
               >
                 Delete
               </button>
