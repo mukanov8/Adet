@@ -24,3 +24,11 @@ body {
 .customFont {
     font-family: 'Sahitya'!important;
 }
+
+.navbar-brand {
+    font-size: xx-large;
+}
+
+.barlimit {
+    max-width: 800px;
+}
