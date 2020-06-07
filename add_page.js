@@ -15,9 +15,7 @@ $(document).ready(function () {
     readURL(this);
   });
 
-  document.getElementById(
-    "item_date"
-  ).value = new Date().toISOString().substring(0, 10);
+  document.getElementById('item_date').value = new Date().toISOString().substring(0, 10);
 
   // $('.form-group').on('change', function(e){
   //   console.log(e.target.options[e.target.selectedIndex].value);
@@ -30,10 +28,19 @@ $(document).ready(function () {
     // Upload file and metadata to the object 'images/mountains.jpg'
     var file = document.getElementById("imgInp").files[0];
 
-    var imageName = document.getElementById("item_name").innerHTML;
+    var imageName = document.getElementById("item_name").value;
     console.log(imageName);
     var uploadTask = storage.child(imageName).put(file);
 
+    console.log(document.getElementById('item_date').value);
+    console.log("sssssss");
+
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+    var userid = getCookie("userId");
     // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(
       firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -67,22 +74,24 @@ $(document).ready(function () {
             break;
         }
       },
+      
       function () {
         // Upload completed successfully, now we can get the download URL
         uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
           console.log("File available at", downloadURL);
           console.log(document.getElementById("item_date").value);
           db.collection("items").add({
-            name: document.getElementById("item_name").innerHTML,
-            description: document.getElementById("item_description").innerHTML,
+            name: document.getElementById("item_name").value,
+            description: document.getElementById("item_description").value,
             timesWorn: 0,
             lastWorn: firebase.firestore.Timestamp.fromDate(new Date()),
-            image: document.getElementById("item_name").innerHTML,
+            image: document.getElementById("item_name").value,
             boughtOn: firebase.firestore.Timestamp.fromDate(
               new Date(document.getElementById("item_date").value)
             ),
-            type: document.getElementById("item_type").innerHTML,
-            category: document.getElementById("item_category").innerHTML,
+            userId: 0000,
+            type: document.getElementById("item_type").value,
+            category: document.getElementById("item_category").value,
           });
         });
       }
