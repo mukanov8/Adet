@@ -242,7 +242,6 @@ input {
         }
 
        #tops{
-            position:absolute;
             z-index: 1;
             width: 65px;
             height: 21px;
