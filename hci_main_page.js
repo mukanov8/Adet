@@ -20,4 +20,13 @@ $(document).ready(function() {
     outer.onclick = function(){localStorage.setItem('name', 'outer');location.href = "hci_items.html";};
     shoes.onclick = function(){localStorage.setItem('name', 'shoes'); location.href = "hci_items.html";};
     add.onclick = function(){location.href = "add_page.html";}
+
+    $('form').keypress(function(e) { 
+        if (e.keyCode === 13) {
+            e.preventDefault();
+            localStorage.setItem('name', 'search');
+            localStorage.setItem('searched', document.getElementById('search_bar').value.replace(/[^a-zA-Z0-9 ]/g, ""));
+            location.href = "hci_items.html";
+        }
+      });
 });
