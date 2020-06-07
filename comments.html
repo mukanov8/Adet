@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sahitya&display=swap" rel="stylesheet">
+
+
+    <title>Comments</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <button class="btn" onClick="window.history.back()">
+                <i class="fa fa-arrow-left fa-lg"></i>
+            </button>
+            <a class="navbar-brand mr-auto">Comments</a>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="container">
+            <div class="row row-content">
+                <div class="ui comments" id="allComments"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <table class="col-12 col-sm-12">
+                <td>Name:</td>
+                <td><div style="padding-top: 5px;"><textarea class="customFont" id="name" style="height: 2rem; " placeholder="Name"></textarea></div></td>
+            
+            </table>
+            <form class="ui reply form">
+                <div class="field">
+                    <textarea class="customFont" id="addCommentText" sty placeholder="Comment"></textarea>
+                </div>
+                <div class="ui primary submit labeled icon button float-right" id="submitComment" class="customFont">
+                    <i class="icon edit"></i> Add Comment
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
+
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyB1kGl8dk__A8iB9qoWvSRtYi-AF1gFuUM",
+          authDomain: "hci-adet.firebaseapp.com",
+          databaseURL:  "https://hci-adet.firebaseio.com",
+          projectId: "hci-adet",
+          storageBucket: "hci-adet.appspot.com",
+          messagingSenderId: "101815988923",
+          appId: "1:101815988923:web:d36bd0f14cdbd37bfe2f9e",
+          measurementId: "G-KZ635VE0GY"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="js/loadComments.js"></script>
+</body>
+
+</html>
