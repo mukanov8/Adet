@@ -46,6 +46,11 @@ $(document).ready(function () {
       });
   });
 
+  arrow = document.getElementById("back");
+  arrow.onclick = function () {
+    location.href = "./hci_items.html";
+  };
+
   // Entering comment box
   // document.getElementById("comments").addEventListener("click", function (){
 
