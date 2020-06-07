@@ -48,7 +48,7 @@
    <div class="container"  style="width: 100%">
     <div class="row">
       <h1 class="col-xs-1">
-        <img class="btn btn-lg" id="back" src="images/image 7.png" />
+        <img class="btn btn-lg" id="back" src="images/image 7.png"/>
       </h1>
       <h1 class="text-center" id="category" style="font-family: Sahitya">New Item</h1>
       <h1 class="col-xs-1"></h1>
@@ -60,101 +60,41 @@
       <input type='file' style="font-family: Sahitya;" id="imgInp" accept="image/*" />
     </form>
   </div>
-<div class = "content">
-  <div class="container-fluid">
-    <div class="form-group">
-      <label for="item_name" style="font-family: Sahitya;">Item Name</label>
-      <input type="text" class="form-control" id="item_name"  style="font-family: Sahitya;" placeholder="E.g. H&M hoodie">
-      <!-- <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea> -->
-    </div>
-    <div class="form-group">
-      <label for="item_description" style="font-family: Sahitya;">Description</label>
-      <textarea class="form-control" rows="3" id="item_description" style="font-family: Sahitya;"placeholder="E.g. My favourite hoodie that I wear everyday"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="purchase_date" class="col-2 col-form-label" style="font-family: Sahitya;">Bought on</label>
-      <div class="col-10 datepicker">
-        <input class="form-control" id="item_date" type="date" style="font-family: Sahitya; color: gray">
+
+  <div class="content">
+    <div class="container-fluid">
+      <div class="form-group">
+        <label for="item_name" style="font-family: Sahitya;">Item Name</label>
+        <input type="text" class="form-control" id="item_name" style="font-family: Sahitya;" placeholder="E.g. H&M hoodie"/>
+        <!-- <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea> -->
       </div>
-    </div>
-    <div class="form-group">
-      <select class="custom-select" id="item_type" required style="width: 100%"> 
-        <option value="" >Select yout item type</option>
-        <option value="1">Top</option>
-        <option value="2">Bottom</option>
-        <option value="3">Outerwear</option>
-        <option value="4">Shoes</option>
-      </select>
->>>>>>> beb7288735ed0ed46ad8d8178ce876e73e9bf44f
-    </div>
-    <div class="content">
-      <div class="container-fluid">
-        <div class="form-group">
-          <label for="item_name" style="font-family: Sahitya;">Item Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="item_name"
-            style="font-family: Sahitya;"
-            placeholder="E.g. H&M hoodie"
-          />
-          <!-- <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea> -->
-        </div>
-        <div class="form-group">
-          <label for="item_description" style="font-family: Sahitya;"
-            >Description</label
-          >
-          <textarea
-            class="form-control"
-            rows="3"
-            id="item_description"
-            style="font-family: Sahitya;"
-            placeholder="E.g. My favourite hoodie that I wear everyday"
-          ></textarea>
-        </div>
-        <div class="form-group">
-          <label
-            for="purchase_date"
-            class="col-2 col-form-label"
-            style="font-family: Sahitya;"
-            >Bought on</label
-          >
-          <div class="col-10">
-            <input
-              class="form-control"
-              type="date"
-              style="font-family: Sahitya; color: gray;"
-              id="item_date"
-            />
-          </div>
-        </div>
-        <div class="form-group">
-          <select
-            class="custom-select"
-            id="item_type"
-            required
-            style="width: 100%;"
-          >
-            <option value="">Select yout item type</option>
-            <option value="1">Top</option>
-            <option value="2">Bottom</option>
-            <option value="3">Outerwear</option>
-            <option value="4">Shoes</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <input
-            type="text"
-            class="form-control"
-            id="item_category"
-            placeholder="Write your item category, e.g. hoodie / t-shirt"
-          />
-        </div>
-        <div class="form-group">
-          <button type="button" class="btn" id="saveBtn">Save</button>
+      <div class="form-group">
+        <label for="item_description" style="font-family: Sahitya;">Description</label>
+        <textarea class="form-control" rows="3" id="item_description" style="font-family: Sahitya;" placeholder="E.g. My favourite hoodie that I wear everyday"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="purchase_date" class="col-2 col-form-label" style="font-family: Sahitya;">Bought on</label>
+        <div class="col-10">
+          <input class="form-control" id="item_date" type="date" style="font-family: Sahitya; color: gray;" />
         </div>
       </div>
+      <div class="form-group">
+        <select class="custom-select" id="item_type" required style="width: 100%;">
+          <option value="">Select yout item type</option>
+          <option value="top">Top</option>
+          <option value="bottom">Bottom</option>
+          <option value="outerwear">Outerwear</option>
+          <option value="shoes">Shoes</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="item_category" placeholder="Write your item category, e.g. hoodie / t-shirt"/>
+      </div>
+      <div class="form-group">
+        <button type="button" class="btn" id="saveBtn">Save</button>
+      </div>
     </div>
+  </div>
 
     <script>
       // Your web app's Firebase configuration
@@ -177,5 +117,6 @@
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
 
     <script src="./add_page.js"></script>
+    <!-- <script src="./loadComments.js"></script> -->
   </body>
 </html>

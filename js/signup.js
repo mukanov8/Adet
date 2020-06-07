@@ -35,7 +35,7 @@ $( document ).ready(function() {
             v.forEach((element) => {
                 if (element.data().password == lnpw.value) {
                     document.cookie = "userId=" + element.data().uniqueId
-                    window.location.href = "wardrobe.html"
+                    window.location.href = "hci_main_page.html"
                 }
             })
         })
