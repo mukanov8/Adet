@@ -38,7 +38,26 @@ $(document).ready(function() {
       return one;
     }
 
-  if (!(request=="all")){
+  if (request=="all"){
+    db.collection("items").orderBy("category")
+    .get()
+    .then((res) => {
+      res.forEach((element) => {
+        var starsRef = storage.child(element.data().image);
+        starsRef.getDownloadURL().then(function (url) {
+          if (!categories.includes(element.data().category.toLowerCase())){
+            categories.push(element.data().category.toLowerCase());
+            addTitle(element.data());
+            createContainer(element.data());
+          }
+          var a = document.getElementById(element.data().category.toLowerCase());            
+          a.appendChild(createItem(url)); 
+        });
+      });
+    });
+  }
+
+  else if (!(request == "search")) {
     db.collection("items").where("type","==",request).orderBy("category")
     .get()
     .then((res) => {
@@ -58,22 +77,26 @@ $(document).ready(function() {
   }
 
   else{
+    var searched = localStorage.getItem('searched');
+    console.log(searched);
     db.collection("items").orderBy("category")
     .get()
     .then((res) => {
       res.forEach((element) => {
         var starsRef = storage.child(element.data().image);
         starsRef.getDownloadURL().then(function (url) {
-          if (!categories.includes(element.data().category.toLowerCase())){
-            categories.push(element.data().category.toLowerCase());
-            addTitle(element.data());
-            createContainer(element.data());
+          if (element.data().name.replace(/[^a-zA-Z0-9 ]/g, "").toUpperCase().includes(searched.toUpperCase())){
+            if (!categories.includes(element.data().category.toLowerCase())){
+              categories.push(element.data().category.toLowerCase());
+              addTitle(element.data());
+              createContainer(element.data());
+            }
+            var a = document.getElementById(element.data().category.toLowerCase());            
+            a.appendChild(createItem(url)); 
           }
-          var a = document.getElementById(element.data().category.toLowerCase());            
-          a.appendChild(createItem(url)); 
         });
-      });
     });
-    
-  };
+   })
+  }
 });
+
