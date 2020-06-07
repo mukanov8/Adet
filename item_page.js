@@ -46,10 +46,21 @@ $(document).ready(function () {
       });
   });
 
-  // Entering comment box
-  // document.getElementById("comments").addEventListener("click", function (){
+  arrow = document.getElementById("back");
+  arrow.onclick = function () {
+    location.href = "./hci_items.html";
+  };
 
-  // });
+  // Entering comment box
+  document.getElementById("comments").addEventListener("click", function () {
+    db.collection("items")
+      .doc(item_id)
+      .get()
+      .then((element) => {
+        location.href =
+          "./comments.html?q=" + item_id + "user=" + element.data().userId;
+      });
+  });
 
   // Send request if share button is pressed
   // document.getElementById("share").addEventListener("click", function (){

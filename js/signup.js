@@ -7,10 +7,21 @@ $( document ).ready(function() {
     var lnpw = document.getElementById("loginpw")
     var signUpButton = document.getElementById("signup")
     var signInButton = document.getElementById("signin")
-    
+    var cookie = getCookie("userId")
+
+    if (getCookie("userId")) {
+        window.location.href = "wardrobe.html" + "?q=" + cookie
+    }
+
     signInButton.addEventListener('click', e => login())
     signUpButton.addEventListener('click', e => submit())
     
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+
 
     function login() {
         if (checkValid(ln) && checkValidPw(lnpw)) {
@@ -20,21 +31,15 @@ $( document ).ready(function() {
     }
 
     function loginDb() {
-        firebase.database().ref('/users/' + ln.value).once('value').then(snapshot => {
-            var user = snapshot.val()
-            if (user) {
-                if (user.password == lnpw.value) {
-                    document.cookie = "userId=" + ln.value
+        db.collection("users").where("username", "==", ln.value).get().then(v => {
+            v.forEach((element) => {
+                if (element.data().password == lnpw.value) {
+                    document.cookie = "userId=" + element.data().uniqueId
                     window.location.href = "wardrobe.html"
-                }   
-                else {
-                    alert("Incorrect password")
                 }
-            }
-            else alert("Incorrect username or password")
+            })
         })
     }
-
 
     function submit() {
         if (checkValid(userName) && checkValid(nm) && checkValid(el) && checkValidPw(pw)) {
@@ -55,10 +60,13 @@ $( document ).ready(function() {
     }
 
     function addEntry() {
-        var entry = firebase.database().ref('/users/').child(userName.value)
-        entry.set({name: nm.value, password: pw.value, email: el.value})
-        return entry   
+        var randomId = Math.floor(Math.random() * 1000000000)
+        db.collection("users").add({
+            name: nm.value,
+            password: pw.value.replace(/\s/g, ''),
+            email: el.value.replace(/\s/g, ''),
+            username: userName.value.replace(/\s/g, ''),
+            uniqueId: randomId
+        }) 
     }
-
-
 })
