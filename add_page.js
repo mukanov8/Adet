@@ -15,7 +15,7 @@ $(document).ready(function () {
     readURL(this);
   });
   document.getElementById(
-    "purchase_date"
+    "item_date"
   ).value = new Date().toISOString().substring(0, 10);
 
   // $('.form-group').on('change', function(e){
@@ -28,7 +28,9 @@ $(document).ready(function () {
     // Upload file and metadata to the object 'images/mountains.jpg'
     var file = document.getElementById("imgInp").files[0];
 
-    var uploadTask = storage.child("image1").put(file);
+    var imageName = document.getElementById("item_name").innerHTML;
+    console.log(imageName);
+    var uploadTask = storage.child(imageName).put(file);
 
     // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(
@@ -67,6 +69,19 @@ $(document).ready(function () {
         // Upload completed successfully, now we can get the download URL
         uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
           console.log("File available at", downloadURL);
+          console.log(document.getElementById("item_date").value);
+          db.collection("items").add({
+            name: document.getElementById("item_name").innerHTML,
+            description: document.getElementById("item_description").innerHTML,
+            timesWorn: 0,
+            lastWorn: firebase.firestore.Timestamp.fromDate(new Date()),
+            image: document.getElementById("item_name").innerHTML,
+            boughtOn: firebase.firestore.Timestamp.fromDate(
+              new Date(document.getElementById("item_date").value)
+            ),
+            type: document.getElementById("item_type").innerHTML,
+            category: document.getElementById("item_category").innerHTML,
+          });
         });
       }
     );
