@@ -14,6 +14,7 @@ $(document).ready(function () {
   $("#imgInp").change(function () {
     readURL(this);
   });
+
   document.getElementById(
     "item_date"
   ).value = new Date().toISOString().substring(0, 10);
@@ -23,6 +24,7 @@ $(document).ready(function () {
   //   console.log(e.target.options[e.target.selectedIndex].text);
   // })
   // document.getElementById('input_img')
+
   $("#saveBtn").click(function () {
     alert("Handler for .click() called.");
     // Upload file and metadata to the object 'images/mountains.jpg'
