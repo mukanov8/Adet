@@ -16,13 +16,13 @@ $(document).ready(function () {
   });
 
   document.getElementById('item_date').value = new Date().toISOString().substring(0, 10);
-
+  back = document.getElementById("back");
   // $('.form-group').on('change', function(e){
   //   console.log(e.target.options[e.target.selectedIndex].value);
   //   console.log(e.target.options[e.target.selectedIndex].text);
   // })
   // document.getElementById('input_img')
-
+  back.onclick = function(){location.href = "hci_main_page.html";}
   $("#saveBtn").click(function () {
     alert("Handler for .click() called.");
     // Upload file and metadata to the object 'images/mountains.jpg'
@@ -89,7 +89,7 @@ $(document).ready(function () {
             boughtOn: firebase.firestore.Timestamp.fromDate(
               new Date(document.getElementById("item_date").value)
             ),
-            userId: 0000,
+            userId: userid,
             type: document.getElementById("item_type").value,
             category: document.getElementById("item_category").value,
           });
