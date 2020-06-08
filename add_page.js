@@ -101,8 +101,14 @@ $(document).ready(function () {
           ),
           type: document.getElementById("item_type").value,
           category: document.getElementById("item_category").value,
-          })
-        }, 
-    );
+          }).then((doc)=> { 
+            console.log(doc)
+            console.log(doc.id)
+            localStorage.setItem('item_id',doc.id);
+            location.href = "index.html";
+          });
+        }
+    )
   });
+  
 });
