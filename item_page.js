@@ -32,7 +32,6 @@ $(document).ready(function () {
       });
   });
 
-
   // Send request if share button is pressed
   // document.getElementById("share").addEventListener("click", function (){
 
@@ -51,7 +50,22 @@ $(document).ready(function () {
 
   // Delete
   document.getElementById("delete").addEventListener("click", function () {
-    db.collection("items").doc(item_id).delete(item_id);
+    db.collection("items")
+      .doc(item_id)
+      .get()
+      .then((item) => {
+        var desertRef = storage.child(item.data().image);
+        desertRef.delete();
+      })
+      .then(function () {
+        db.collection("items")
+          .doc(item_id)
+          .delete()
+          .then(function () {
+            console.log("successful");
+            window.history.back();
+          });
+      });
   });
 });
 
@@ -76,6 +90,15 @@ function insert(item) {
   // Display notification if the clothes is worn over 50 times.
   if (item.data().timesWorn > 50) {
     document.getElementById("notification").style.display = "block";
+    document.getElementById("notification").innerHTML =
+      "<b>Notification: </b>You have worn this clothes over 50 times. Maybe, it is time to throw it away.";
+  } else if (
+    item.data().timesWorn < 20 &&
+    Math.abs(new Date() - temp) / (1000 * 60 * 60 * 24) > 60
+  ) {
+    document.getElementById("notification").style.display = "block";
+    document.getElementById("notification").innerHTML =
+      "<b>Notification: </b>It has been 2 months since you last wore this item, and you seldomly wear it.";
   } else {
     document.getElementById("notification").style.display = "none";
   }
