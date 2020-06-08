@@ -19,6 +19,24 @@ $(document).ready(function() {
           location.href = "hci_items.html";
       }
     })
+    
+    //to change the x,y pos of div. not used currently
+    // $(function(){
+    //   var $this = $("#all");
+    //   var offset = $this.offset();
+    //   var width = $this.width();
+    //   var height = $this.height();
+     
+    //   var x = offset.left + width / 2;
+    //   var y = offset.top + height / 2;
+    //   console.log(x ,y)
+    //   var logoImg = document.getElementById('userLogo'); // or any other selector
+    //   logoImg.style.left = x-16+"px";
+    //   logoImg.style.top = y+"px";
+    //   console.log(x,y+"aaa");
+    //   console.log(userId);
+    //  })
+
 
     all = document.getElementById("all_button");
     t = document.getElementById("tops_button");
@@ -29,7 +47,7 @@ $(document).ready(function() {
     all.onclick = function(){localStorage.setItem('name', 'all'); location.href = "hci_items.html";};
     t.onclick = function(){localStorage.setItem('name', 'top'); location.href = "hci_items.html";};
     bottoms.onclick = function(){localStorage.setItem('name', 'bottom'); location.href = "hci_items.html";};
-    outer.onclick = function(){localStorage.setItem('name', 'outer');location.href = "hci_items.html";};
+    outer.onclick = function(){localStorage.setItem('name', 'outerwear');location.href = "hci_items.html";};
     shoes.onclick = function(){localStorage.setItem('name', 'shoes'); location.href = "hci_items.html";};
     add.onclick = function(){
       add.hidden = true

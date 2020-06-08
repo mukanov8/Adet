@@ -44,7 +44,7 @@ $(document).ready(function () {
       .get()
       .then((element) => {
         location.href =
-          "./comments.html?q=" + item_id + "user=" + element.data().userId;
+          "./comments.html?q=" + item_id + "&user=" + element.data().userId;
       });
   });
 
