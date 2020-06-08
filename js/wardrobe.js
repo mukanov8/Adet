@@ -29,7 +29,7 @@ $(document).ready(function() {
     all.onclick = function(){localStorage.setItem('name', 'all'); location.href = "hci_items.html";};
     t.onclick = function(){localStorage.setItem('name', 'top'); location.href = "hci_items.html";};
     bottoms.onclick = function(){localStorage.setItem('name', 'bottom'); location.href = "hci_items.html";};
-    outer.onclick = function(){localStorage.setItem('name', 'outer');location.href = "hci_items.html";};
+    outer.onclick = function(){localStorage.setItem('name', 'outerwear');location.href = "hci_items.html";};
     shoes.onclick = function(){localStorage.setItem('name', 'shoes'); location.href = "hci_items.html";};
     add.onclick = function(){
       add.hidden = true
