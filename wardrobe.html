@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link href="https://fonts.googleapis.com/css?family=Sahitya&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-
+    
 
     <title>Wardrobe</title>
 </head>
@@ -25,10 +25,13 @@
         </div>
     </nav>
 
-    <div class="content">
-        <div class="container customFont">
-            <div class="wrapper" style="padding-top:38px">
-                <img style="display: block; margin: auto; max-width: 100%;" src="./images/newBg.png" /> 
+    <div class="content" >
+        <div class="container customFont"> 
+            <div class="wrapper" id="background_img" style="padding-top:38px">
+                <img style="display: block; margin: auto; max-width: 100%;" src="./images/background.png" />  
+            </div>
+            <div class="text-center">
+                <i class='fas fa-user-circle' id = "userLogo"></i>
             </div>
         </div>
         <div id="items_count">Items: 0</div>
@@ -92,6 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
