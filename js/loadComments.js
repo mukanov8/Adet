@@ -6,7 +6,7 @@ $( document ).ready(function() {
     var submitButton = document.getElementById("submitComment")
     var commentBox = document.getElementById("addCommentText")
     var nameBox = document.getElementById("name")
-    
+    getPostImg()
 
     $('#name').keypress(event => {
         if (event.keyCode == 13){
@@ -18,14 +18,27 @@ $( document ).ready(function() {
     getComments()
     getName()
 
-    submitButton.addEventListener('click', e => {submit()})
-
     function getName() {
         if (getCookie("userId") == postedBy) {
             nameBox.value = postedBy
+            nameBox.disabled = true
         }
     }
     
+    function getPostImg() {
+        db.collection("items").doc(postId).get().then((item) => { insert(item) });
+    }
+
+    function insert(item) {
+        if (!item.data()) {document.getElementById("nopost").hidden = false; return}
+        // Create a reference to the file we want to download
+        submitButton.addEventListener('click', e => {submit()})
+        var starsRef = storage.child(item.data().image);
+        // Get the download URL
+        starsRef.getDownloadURL().then(function (url) {
+          document.getElementById("post").src = url;
+        });
+      }
 
     function getCookie(name) {
         const value = `; ${document.cookie}`;

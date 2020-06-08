@@ -25,10 +25,16 @@
             <a class="navbar-brand mx-auto">Comments&nbsp&nbsp&nbsp</a>
         </div>
     </nav>
+    <div style="padding-top: 15px;">
+        <div class="wrapper" style="padding-top:38px">
+            <img id="post" style="display: block; margin: auto; max-height:300px!important;"/> 
+        </div>
+    </div>
     <div class="content">
         <div class="container">
-            <div class="row row-content">
+            <div class="row">
                 <div class="ui comments" id="allComments"></div>
+                <h1 id="nopost" class="mx-auto customFont" style="padding-bottom: 20px" hidden>No such post found</h1>
             </div>
         </div>
         
@@ -43,7 +49,7 @@
                     <div class="field">
                         <textarea class="customFont" id="addCommentText" style="min-height: 3em; height:5em" placeholder="Comment"></textarea>
                     </div>
-                    <div class="ui primary submit labeled icon button float-right" id="submitComment" class="customFont">
+                    <div class="ui submit labeled icon button float-right" id="submitComment" class="customFont">
                         <i class="icon edit"></i> Add Comment
                     </div>
                 </div>
@@ -58,21 +64,22 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-database.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
     <script>
         var firebaseConfig = {
-          apiKey: "AIzaSyB1kGl8dk__A8iB9qoWvSRtYi-AF1gFuUM",
-          authDomain: "hci-adet.firebaseapp.com",
-          databaseURL:  "https://hci-adet.firebaseio.com",
-          projectId: "hci-adet",
-          storageBucket: "hci-adet.appspot.com",
-          messagingSenderId: "101815988923",
-          appId: "1:101815988923:web:d36bd0f14cdbd37bfe2f9e",
-          measurementId: "G-KZ635VE0GY"
+            apiKey: "AIzaSyB4LQ5xwbSDSRPLP5OzaAv0wZJzIoqHAsY",
+            authDomain: "adet-85cc8.firebaseapp.com",
+            databaseURL: "https://adet-85cc8.firebaseio.com",
+            projectId: "adet-85cc8",
+            storageBucket: "adet-85cc8.appspot.com",
+            messagingSenderId: "5031429336",
+            appId: "1:5031429336:web:8bc660dfd832ba29a143ad", 
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
+        const db = firebase.firestore();
+        var storage = firebase.storage().ref();
     </script>
     <script src="js/loadComments.js"></script>
 </body>
