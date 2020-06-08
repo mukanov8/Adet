@@ -8,17 +8,6 @@ $(document).ready(function () {
       insert(item);
     });
 
-  // If the user is not logged in, hide some functions.
-  if (!getCookie("userId")) {
-    document.getElementById("minus").hidden = true;
-    document.getElementById("plus").hidden = true;
-    document.getElementById("back").hidden = true;
-  } else {
-    document.getElementById("minus").hidden = false;
-    document.getElementById("plus").hidden = false;
-    document.getElementById("back").hidden = false;
-  }
-
   // Increasing and decreasing timesWorn
   document.getElementById("plus").addEventListener("click", function () {
     document.getElementById("timesWorn").innerHTML =
@@ -43,10 +32,6 @@ $(document).ready(function () {
       });
   });
 
-  arrow = document.getElementById("back");
-  arrow.onclick = function () {
-    location.href = "./hci_items.html";
-  };
 
   // Send request if share button is pressed
   // document.getElementById("share").addEventListener("click", function (){
@@ -77,7 +62,6 @@ function insert(item) {
   // Get the download URL
   starsRef.getDownloadURL().then(function (url) {
     document.getElementById("image").src = url;
-    document.getElementById("imageRef").href = url;
   });
 
   document.getElementById("description").innerHTML = item.data().description;

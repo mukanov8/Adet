@@ -33,29 +33,36 @@
       href="https://fonts.googleapis.com/css?family=Comic+Neue"
       rel="stylesheet"
     />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Sahitya&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
   </head>
   <body>
-    <div id="mainContainer">
-      <div class="container-fluid navbar-fixed-top">
-        <div class="row">
-          <h1 class="col-xs-1">
-            <img class="btn btn-lg" id="back" src="images/image 7.png" />
-          </h1>
-          <h1 class="col-xs-10 text-center" id="category">Hoodie</h1>
-          <h1 class="col-xs-1"></h1>
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container barlimit">
+            <button class="btn" onClick="window.history.back()">
+                <i class="icon arrow left large"></i>
+            </button>
+            <a class="navbar-brand mx-auto customFont" id="category">ADET</a>
+            <button class="btn">
+              <i class="home icon large" onclick="window.location.href = 'wardrobe.html'"></i>
+            </button>
         </div>
-      </div>
-      <h1 id="upperPadding"></h1>
+    </nav>
+    <div class="content">
       <!-- <img src="hoodie.jpg" class="img-responsive" alt="Cinque Terre" /> -->
       <div class="thumbnail">
         <div>
           <h3 class="text-center" id="name">Pink Hoodie - H&M</h3>
         </div>
-        <a id="imageRef" href="">
+        <a id="imageRef">
           <img
             id="image"
             src=""
@@ -63,6 +70,11 @@
             class="img-responsive"
             style="width: 60%;"
           />
+          <div id="myModal" class="modal">
+            <span class="close" style="color:white;font-size: xxx-large;">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption"></div>
+          </div>
           <p class="caption text-center" id="description">
             This hoodies is so hot!
           </p>
@@ -157,6 +169,7 @@
         </div>
       </div>
     </div>
+  </div>
 
     <script>
       // Your web app's Firebase configuration
@@ -167,7 +180,7 @@
         projectId: "adet-85cc8",
         storageBucket: "adet-85cc8.appspot.com",
         messagingSenderId: "5031429336",
-        appId: "1:5031429336:web:8bc660dfd832ba29a143ad",
+        appId: "1:5031429336:web:8bc660dfd832ba29a143ad", 
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
@@ -177,5 +190,25 @@
     <script src="jquery/js/jquery-1.9.0.min.js"></script>
     <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
     <script src="./item_page.js"></script>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      // Get the image and insert it inside the modal - use its "alt" text as a caption
+      var img = document.getElementById("image");
+      var modalImg = document.getElementById("img01");
+      var captionText = document.getElementById("caption");
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+      }
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() { 
+        modal.style.display = "none";
+      }
+    </script>
   </body>
 </html>

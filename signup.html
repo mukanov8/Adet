@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-sm fixed-top">
         <div class="container barlimit">
             <button class="btn" onClick="window.history.back()">
-                <i class="fa fa-arrow-left fa-lg"></i>
+                <i class="icon arrow left large"></i>
             </button>
             <a class="navbar-brand mx-auto customFont">ADET&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
         </div>
@@ -29,6 +29,7 @@
         <div class="container customFont" id="signUpContainer">
             <div class="ui equal width form row-content">
                 <p>Have an account? <a href="javascript: signin()">Sign in now</a></p>
+              <form>
                 <div class="fields">
                     <div class="field">
                       <label>Name</label>
@@ -49,10 +50,10 @@
                     <input id="password" type="password">
                   </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
             <div style="padding-bottom:40px">
-                <div class="ui primary submit labeled icon button float-right" id="signup" class="customFont">
+                <div class="ui submit labeled icon button float-right" id="signup" class="customFont">
                     <i class="icon plus square"></i> Sign up
                 </div>
             </div>  
@@ -60,6 +61,7 @@
         <div class="container customFont" id="signInContainer" hidden>
             <div class="ui equal width form row-content">
                 <p>Don't have an account? <a href="javascript: signup()">Sign up now</a></p>
+              <form>
                 <div class="fields">
                     <div class="field">
                       <label>Username</label>
@@ -70,10 +72,10 @@
                       <input id="loginpw" type="password">
                     </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
             <div style="padding-bottom: 40px">
-                <div class="ui primary submit labeled icon button float-right" id="signin" class="customFont">
+                <div class="ui submit labeled icon button float-right" id="signin" class="customFont">
                     <i class="icon sign in"></i> Sign in
                 </div>
             </div>   
