@@ -6,6 +6,9 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -101,10 +104,8 @@
         </div>
       </div>
 
-      <div class="container-fluid" id="notification" style="display: none;">
-        <div class="well">
+      <div class="container-fluid well" id="notification" style="display: none;">
           <b>Notification: </b>You should throw this clothes away!
-        </div>
       </div>
       <h1 id="padding"></h1>
       <div class="btn-group-justified navbar-fixed-bottom">
@@ -128,7 +129,7 @@
           class="btn"
           id="deleteBar"
           data-toggle="modal"
-          data-target="#myModal"
+          data-target="#delModal"
         >
           <span
             class="iconify"
@@ -140,7 +141,7 @@
       </div>
 
       <!-- Modal. Pops up when delete is pressed. -->
-      <div id="myModal" class="modal fade" role="dialog">
+      <div id="delModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <!-- Modal content-->
           <div class="modal-content">
