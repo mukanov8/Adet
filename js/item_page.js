@@ -8,6 +8,23 @@ $(document).ready(function () {
       insert(item);
     });
 
+  //Back button
+  document.getElementById("backButton").addEventListener("click", function () {
+    var name = localStorage.getItem("name");
+    console.log("somehthing is here");
+    if (name == "") {
+      db.collection("items")
+        .doc(item_id)
+        .get()
+        .then((item) => {
+          localStorage.setItem("name", item.data().type);
+          location.href = "./items_page.html";
+        });
+    } else {
+      location.href = "./items_page.html";
+    }
+  });
+
   // Increasing and decreasing timesWorn
   document.getElementById("plus").addEventListener("click", function () {
     document.getElementById("timesWorn").innerHTML =
@@ -44,7 +61,10 @@ $(document).ready(function () {
       .get()
       .then((element) => {
         location.href =
-          "./comments_page.html?q=" + item_id + "&user=" + element.data().userId; //check this
+          "./comments_page.html?q=" +
+          item_id +
+          "&user=" +
+          element.data().userId; //check this
       });
   });
 
@@ -106,10 +126,4 @@ function insert(item) {
   document.getElementById("category").innerHTML = item.data().category;
   document.getElementById("name").innerHTML = item.data().name;
   document.getElementById("name").name = item.id;
-}
-
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(";").shift();
 }
