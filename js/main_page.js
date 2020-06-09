@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var items = 0;
     userId = getCookie("userId")
-
+    var signout = 
 
     db.collection("items").where("userId", "==", userId).get()
     .then((res) => {
@@ -10,6 +10,10 @@ $(document).ready(function() {
       });
       document.getElementById("items_count").innerHTML = "Items: "+items;  
     });
+
+    $(document.getElementById('signout')).click(ev => {
+      signOut()
+    })
 
     $('form').keypress(function(e) { 
       if (e.keyCode === 13) {
@@ -53,4 +57,10 @@ $(document).ready(function() {
       add.hidden = true
       document.getElementById("add_button1").hidden = false
       location.href = "add_page.html";}
+
+  function signOut() {
+    localStorage.clear()
+    document.cookie = "userId=" + ""
+    window.location.href = "signup_page.html"
+  }
 });
