@@ -8,10 +8,17 @@ $(document).ready(function () {
       insert(item);
     });
 
+  // Enabling a popover
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  $(document).ready(function () {
+    $('[data-toggle="popover"]').popover();
+  });
+
   //Back button
   document.getElementById("backButton").addEventListener("click", function () {
     var name = localStorage.getItem("name");
-    console.log("somehthing is here");
     if (name == "") {
       db.collection("items")
         .doc(item_id)
@@ -50,9 +57,26 @@ $(document).ready(function () {
   });
 
   // Send request if share button is pressed
-  // document.getElementById("share").addEventListener("click", function (){
-
-  // });
+  db.collection("items")
+    .doc(item_id)
+    .get()
+    .then((element) => {
+      var temp = window.location.href;
+      temp = temp.split("/");
+      temp.pop();
+      temp = temp.join("/");
+      var link =
+        temp +
+        "/comments_page.html?q=" +
+        item_id +
+        "&user=" +
+        element.data().userId; //check this
+      $("#share").popover({
+        title:
+          "Your friends can see and comment on your clothes through this link",
+        content: link,
+      });
+    });
 
   // Entering comment box
   document.getElementById("comments").addEventListener("click", function () {
