@@ -72,12 +72,18 @@ $(document).ready(function () {
         "&user=" +
         element.data().userId; //check this
       $("#share").popover({
+        animation: true,
         placement: "top",
         title:
           "Your friends can see and comment on your clothes through this link",
         content: link,
+        // trigger: "focus",
       });
     });
+
+  // $("#share").popover({
+  //   trigger: "focus",
+  // });
 
   // Entering comment box
   document.getElementById("comments").addEventListener("click", function () {
