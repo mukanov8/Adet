@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var items = 0;
     userId = getCookie("userId")
-    var signout = 
 
     db.collection("items").where("userId", "==", userId).get()
     .then((res) => {
