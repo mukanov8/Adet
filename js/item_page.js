@@ -57,27 +57,38 @@ $(document).ready(function () {
   });
 
   // Send request if share button is pressed
-  db.collection("items")
-    .doc(item_id)
-    .get()
-    .then((element) => {
-      var temp = window.location.href;
-      temp = temp.split("/");
-      temp.pop();
-      temp = temp.join("/");
-      var link =
-        temp +
-        "/comments_page.html?q=" +
-        item_id +
-        "&user=" +
-        element.data().userId; //check this
-      $("#share").popover({
-        placement: "top",
-        title:
-          "Your friends can see and comment on your clothes through this link",
-        content: link,
+  $("#share").popover({
+    container: "body",
+    boundary: "window",
+    animation: true,
+    placement: "top",
+    content: "The link to this clothes is copied to your clipboard",
+    // trigger: "focus",
+  });
+
+  document.getElementById("share").addEventListener("click", function () {
+    db.collection("items")
+      .doc(item_id)
+      .get()
+      .then((element) => {
+        var temp = window.location.href;
+        temp = temp.split("/");
+        temp.pop();
+        temp = temp.join("/");
+        var link =
+          temp +
+          "/comments_page.html?q=" +
+          item_id +
+          "&user=" +
+          element.data().userId;
+        const el = document.createElement("textarea");
+        el.value = link;
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        document.body.removeChild(el);
       });
-    });
+  });
 
   // Entering comment box
   document.getElementById("comments").addEventListener("click", function () {

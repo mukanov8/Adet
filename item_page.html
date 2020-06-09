@@ -113,26 +113,27 @@
       <div class="container-fluid well" id="notification" style="display: none;">
           <b>Notification: </b>You should throw this clothes away!
       </div>   
-
+      <a id="temp" title="Header" data-toggle="popover" data-trigger="hover" data-content="Some content">Hover over me</a>
       <h1 id="padding"></h1>
       <div class="btn-group-justified navbar-fixed-bottom">
         <!-- <div class="btn" data-container="body" data-toggle="popover" data-placement="top" title="Your friends can see and comment on your clothes through this link" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." id="share"> -->
-       <div class="btn" id="share">
+       <div class="btn">
          
-          <span
+          <button
+          id="share"
             class="iconify"
             data-inline="false"
             data-icon="ri:share-box-fill"
             style="font-size: 41px;"
-          ></span>
+          ></button>
         </div>
         <div class="btn" id="comments">
-          <span
+          <button
             class="iconify"
             data-inline="false"
             data-icon="bx:bx-comment-dots"
             style="font-size: 41px;"
-          ></span>
+          ></button>
         </div>
         <div
           class="btn"
@@ -140,17 +141,17 @@
           data-toggle="modal"
           data-target="#delModal"
         >
-          <span
+          <button
             class="iconify"
             data-inline="false"
             data-icon="ic:outline-delete"
             style="font-size: 41px;"
-          ></span>
+          ></button>
         </div>
       </div>
 
       <!-- Modal. Pops up when delete is pressed. -->
-      <div id="delModal" class="modal fade" role="dialog">
+      <div id="delModal" class="modal" role="dialog">
         <div class="modal-dialog">
           <!-- Modal content-->
           <div class="modal-content">
