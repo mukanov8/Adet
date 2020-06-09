@@ -81,10 +81,6 @@ $(document).ready(function () {
       });
     });
 
-  // $("#share").popover({
-  //   trigger: "focus",
-  // });
-
   // Entering comment box
   document.getElementById("comments").addEventListener("click", function () {
     db.collection("items")
