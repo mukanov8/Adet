@@ -72,6 +72,7 @@ $(document).ready(function () {
         "&user=" +
         element.data().userId; //check this
       $("#share").popover({
+        placement: "top",
         title:
           "Your friends can see and comment on your clothes through this link",
         content: link,
