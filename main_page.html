@@ -31,9 +31,34 @@
                 <img style="display: block; margin: auto; max-width: 100%;" src="./images/background.png" />  
             </div>
             <div class="text-center">
-                <i class='fas fa-user-circle' id = "userLogo"></i>
+                <i class='fas fa-user-circle' id = "userLogo" data-toggle="modal" data-target="#userModal"></i>
+            </div>
+    <div class="modal umd" id="userModal">
+        <div class="modal-dialog">
+            <div class="modal-content" >
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign Out</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Are you sure you want to sign out?
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <div class="mx-auto">
+                        <div class="ui red submit labeled icon button" id="signout" class="customFont">
+                            <i class="icon sign out alternate icon"></i> Sign out
+                        </div>
+                        <div class="ui green submit labeled icon button" data-dismiss="modal" class="customFont">
+                            <i class="icon sign in alternate icon"></i> Stay signed in
+                        </div>
+                    </div>   
+                </div>
             </div>
         </div>
+    </div>
         <div id="items_count">Items: 0</div>
         <div class="container customFont search" >
             <div class="ui equal width form">
