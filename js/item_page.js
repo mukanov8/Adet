@@ -62,7 +62,7 @@ $(document).ready(function () {
     boundary: "window",
     animation: true,
     placement: "top",
-    content: "The link is copied to your clipboard",
+    content: "The link to this clothes is copied to your clipboard",
     // trigger: "focus",
   });
 
