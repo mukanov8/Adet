@@ -46,14 +46,14 @@ $(document).ready(function() {
     bottoms = document.getElementById("bottom_button");
     outer = document.getElementById("outer_button");
     shoes = document.getElementById("shoes_button");
-    add = document.getElementById("add_button");
+    add = document.getElementById("plus");
     all.onclick = function(){localStorage.setItem('name', 'all'); location.href = "items_page.html";};
     t.onclick = function(){localStorage.setItem('name', 'top'); location.href = "items_page.html";};
     bottoms.onclick = function(){localStorage.setItem('name', 'bottom'); location.href = "items_page.html";};
     outer.onclick = function(){localStorage.setItem('name', 'outerwear');location.href = "items_page.html";};
     shoes.onclick = function(){localStorage.setItem('name', 'shoes'); location.href = "items_page.html";};
     add.onclick = function(){
-      add.hidden = true
+      document.getElementById("add_button").hidden = true
       document.getElementById("add_button1").hidden = false
       location.href = "add_page.html";}
 
