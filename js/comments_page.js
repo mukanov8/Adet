@@ -63,6 +63,7 @@ $( document ).ready(function() {
         if (comments.comments[0].name == null) comments.comments.shift()
         entry.set({ comments: comments.comments })
         addLast(comments.comments)
+        window.scrollTo(0,document.body.scrollHeight)
         nameBox.value = ""
         getName()
         commentBox.value = ""
