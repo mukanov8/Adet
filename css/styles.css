@@ -30,6 +30,7 @@ body {
     max-width: 800px;
     margin: auto;
     padding: 10px;
+    padding-bottom: 0px;
 }
 .text {
     word-break: break-word!important
