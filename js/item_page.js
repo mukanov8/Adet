@@ -63,8 +63,20 @@ $(document).ready(function () {
     animation: true,
     placement: "top",
     content: "The link to this clothes is copied to your clipboard",
-    // trigger: "focus",
+    trigger: "manual",
   });
+
+  $("#share")
+    .popover({ trigger: "manual" })
+    .click(function () {
+      var pop = $(this);
+      pop.popover("show");
+      pop.on("shown.bs.popover", function () {
+        setTimeout(function () {
+          pop.popover("hide");
+        }, 2200);
+      });
+    });
 
   document.getElementById("share").addEventListener("click", function () {
     db.collection("items")
@@ -147,14 +159,14 @@ function insert(item) {
   if (item.data().timesWorn > 50) {
     document.getElementById("notification").style.display = "block";
     document.getElementById("notification").innerHTML =
-      "<b>Notification: </b>You have worn this clothes over 50 times. Maybe, it is time to throw it away.";
+      "<b>Notification: </b>You have worn this item over 50 times. Maybe, it is time to throw it away.";
   } else if (
     item.data().timesWorn < 20 &&
     Math.abs(new Date() - temp) / (1000 * 60 * 60 * 24) > 60
   ) {
     document.getElementById("notification").style.display = "block";
     document.getElementById("notification").innerHTML =
-      "<b>Notification: </b>It has been 2 months since you last wore this item, and you seldomly wear it.";
+      "<b>Notification: </b>It has been 2 months since you last wore this item, and you seldom wear it.";
   } else {
     document.getElementById("notification").style.display = "none";
   }
