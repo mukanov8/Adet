@@ -156,7 +156,17 @@ function insert(item) {
   document.getElementById("timesWorn").innerHTML = item.data().timesWorn;
 
   // Display notification if the clothes is worn over 50 times.
-  if (item.data().timesWorn > 50) {
+  if (
+    item.data().type.toLowerCase() == "shoes" &&
+    item.data().timesWorn > 100
+  ) {
+    document.getElementById("notification").style.display = "block";
+    document.getElementById("notification").innerHTML =
+      "<b>Notification: </b>You have worn this item over 100 times. Maybe, it is time to throw it away.";
+  } else if (
+    item.data().type.toLowerCase() != "shoes" &&
+    item.item.data().timesWorn > 50
+  ) {
     document.getElementById("notification").style.display = "block";
     document.getElementById("notification").innerHTML =
       "<b>Notification: </b>You have worn this item over 50 times. Maybe, it is time to throw it away.";
