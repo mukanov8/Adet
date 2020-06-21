@@ -29,14 +29,25 @@ $(document).ready(function () {
       location.href = "items_page.html";
     }
   });
+  // function showNotification(name, id) {
+  //   const notification = new Notification("Disposal Recommendation", {
+  //     body: "It has been over 2 months since you last wore '" + name + "'."
+  //   });
+  //   notification.onclick = (e) => {
+  //     localStorage.setItem("item_id", id);
+  //     window.location.href = "item_page.html";
+  //   };
+  // }
+
+  navigator.serviceWorker.register("js/notificationWorker.js");
+
   function showNotification(name, id) {
-    const notification = new Notification("Disposal Recommendation", {
-      body: "It has been over 2 months since you last wore '" + name + "'.",
+    localStorage.setItem("item_id", id);
+    navigator.serviceWorker.ready.then(function (registration) {
+      registration.showNotification("Adet Disposal Recommendation", {
+        body: "It has been over 2 months since you last wore '" + name + "'.",
+      });
     });
-    notification.onclick = (e) => {
-      localStorage.setItem("item_id", id);
-      window.location.href = "item_page.html";
-    };
   }
 
   // notif = localStorage.getItem("notification");
