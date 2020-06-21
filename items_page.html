@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utrf-8"/>
-        <link href="css/items_page.css" rel="stylesheet"/>
-        <link href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap" rel="stylesheet">
-        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
-    </head>
-    <body>
-        <div id = "parent">
-            <div id = "back_button">
-                <button type="button" id = "arrow_button"></button>
-                <img src = "./images/arrow.png" id = "arrow"/>
-                <script>
-                    arrow = document.getElementById("arrow_button");
-                    arrow.onclick = function(){
-                        location.href = "./main_page.html";
-                    }
-                </script>
-            </div>
-
-            <div id = "title_box"></div>
-            <div id = "title"></div>
-        </div>
-
-
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utrf-8" />
+    <link rel="icon" href="images/app_icon.png" />
+    <link href="css/items_page.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="back_button">
+        <button type="button" id="arrow_button"></button>
+        <img src="./images/arrow.png" id="arrow" />
         <script>
-            var firebaseConfig = {
-              apiKey: "AIzaSyB4LQ5xwbSDSRPLP5OzaAv0wZJzIoqHAsY",
-              authDomain: "adet-85cc8.firebaseapp.com",
-              databaseURL: "https://adet-85cc8.firebaseio.com",
-              projectId: "adet-85cc8",
-              storageBucket: "adet-85cc8.appspot.com",
-              messagingSenderId: "5031429336",
-              appId: "1:5031429336:web:8bc660dfd832ba29a143ad",
-            };
-            firebase.initializeApp(firebaseConfig);
-            const db = firebase.firestore();
-            var storage = firebase.storage().ref();
+          arrow = document.getElementById("arrow_button");
+          arrow.onclick = function () {
+            location.href = "./main_page.html";
+          };
         </script>
-        <script src="jquery/js/jquery-1.9.0.min.js"></script>
-        <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
-        <script src = "js/items_page.js"></script>
-    </body>
+      </div>
+
+      <div id="title_box"></div>
+      <div id="title"></div>
+    </div>
+
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyB4LQ5xwbSDSRPLP5OzaAv0wZJzIoqHAsY",
+        authDomain: "adet-85cc8.firebaseapp.com",
+        databaseURL: "https://adet-85cc8.firebaseio.com",
+        projectId: "adet-85cc8",
+        storageBucket: "adet-85cc8.appspot.com",
+        messagingSenderId: "5031429336",
+        appId: "1:5031429336:web:8bc660dfd832ba29a143ad",
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      var storage = firebase.storage().ref();
+    </script>
+    <script src="jquery/js/jquery-1.9.0.min.js"></script>
+    <script src="jquery/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="js/items_page.js"></script>
+  </body>
 </html>

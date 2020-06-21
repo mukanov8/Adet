@@ -45,6 +45,7 @@ $(document).ready(function () {
     navigator.serviceWorker.ready.then(function (registration) {
       registration.showNotification("Adet Disposal Recommendation", {
         body: "It has been over 2 months since you last wore '" + name + "'.",
+        icon: "images/app_icon.png",
       });
     });
   }

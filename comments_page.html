@@ -1,63 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="icon" href="images/app_icon.png" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Sahitya&display=swap" rel="stylesheet">
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sahitya&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Comments</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-sm fixed-top">
-        <div class="container barlimit">
-            <button class="btn" onClick="window.history.back()">
-                <i class="fa fa-arrow-left fa-lg"></i>
-            </button>
-            <a class="navbar-brand mx-auto">Comments&nbsp&nbsp&nbsp</a>
-        </div>
+      <div class="container barlimit">
+        <button class="btn" onClick="window.history.back()">
+          <i class="fa fa-arrow-left fa-lg"></i>
+        </button>
+        <a class="navbar-brand mx-auto">Comments&nbsp&nbsp&nbsp</a>
+      </div>
     </nav>
-    <div class="sticky-top" style=""> 
-        <div class="wrapper" style="padding-top:38px; padding-bottom:10px">
-            <img id="post" style="display: block; margin: auto; max-width: 40%; height: auto; max-height: 40%; width: auto;"/> 
-        </div>
+    <div class="sticky-top" style="">
+      <div class="wrapper" style="padding-top: 38px; padding-bottom: 10px;">
+        <img
+          id="post"
+          style="
+            display: block;
+            margin: auto;
+            max-width: 40%;
+            height: auto;
+            max-height: 40%;
+            width: auto;
+          "
+        />
+      </div>
     </div>
     <div class="content">
-        <div class="container">
-            <div class="row">
-                <div class="ui comments" id="allComments"></div>
-                <h1 id="nopost" class="mx-auto customFont" style="padding-bottom: 20px" hidden>No such post found</h1>
+      <div class="container">
+        <div class="row">
+          <div class="ui comments" id="allComments"></div>
+          <h1
+            id="nopost"
+            class="mx-auto customFont"
+            style="padding-bottom: 20px;"
+            hidden
+          >
+            No such post found
+          </h1>
+        </div>
+      </div>
+
+      <div class="container sticky-bottom">
+        <table class="col-10 col-sm-10">
+          <td>Name:</td>
+          <td>
+            <div style="padding-top: 5px;">
+              <textarea
+                class="customFont"
+                id="name"
+                style="height: 2rem;"
+                placeholder="Name"
+              ></textarea>
             </div>
-        </div>
-        
-        <div class="container sticky-bottom">
-            <table class="col-10 col-sm-10">
-                <td>Name:</td>
-                <td><div style="padding-top: 5px;"><textarea class="customFont" id="name" style="height: 2rem; " placeholder="Name"></textarea></div></td>
-            
-            </table>
-            <form class="ui reply form" style="padding-top:10px">
-                <div style="padding-bottom: 40px;">
-                    <div class="field">
-                        <textarea class="customFont" id="addCommentText" style="min-height: 3em; height:5em" placeholder="Comment"></textarea>
-                    </div>
-                    <div class="ui submit labeled icon button float-right" id="submitComment" class="customFont">
-                        <i class="icon edit"></i> Add Comment
-                    </div>
-                </div>
-            </form>
-        </div>
+          </td>
+        </table>
+        <form class="ui reply form" style="padding-top: 10px;">
+          <div style="padding-bottom: 40px;">
+            <div class="field">
+              <textarea
+                class="customFont"
+                id="addCommentText"
+                style="min-height: 3em; height: 5em;"
+                placeholder="Comment"
+              ></textarea>
+            </div>
+            <div
+              class="ui submit labeled icon button float-right"
+              id="submitComment"
+              class="customFont"
+            >
+              <i class="icon edit"></i> Add Comment
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
@@ -67,21 +115,20 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
     <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyB4LQ5xwbSDSRPLP5OzaAv0wZJzIoqHAsY",
-            authDomain: "adet-85cc8.firebaseapp.com",
-            databaseURL: "https://adet-85cc8.firebaseio.com",
-            projectId: "adet-85cc8",
-            storageBucket: "adet-85cc8.appspot.com",
-            messagingSenderId: "5031429336",
-            appId: "1:5031429336:web:8bc660dfd832ba29a143ad", 
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-        var storage = firebase.storage().ref();
+      var firebaseConfig = {
+        apiKey: "AIzaSyB4LQ5xwbSDSRPLP5OzaAv0wZJzIoqHAsY",
+        authDomain: "adet-85cc8.firebaseapp.com",
+        databaseURL: "https://adet-85cc8.firebaseio.com",
+        projectId: "adet-85cc8",
+        storageBucket: "adet-85cc8.appspot.com",
+        messagingSenderId: "5031429336",
+        appId: "1:5031429336:web:8bc660dfd832ba29a143ad",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      var storage = firebase.storage().ref();
     </script>
     <script src="js/comments_page.js"></script>
-</body>
-
+  </body>
 </html>
