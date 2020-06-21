@@ -9,10 +9,14 @@ body {
   padding: 0px !important;
   margin-bottom: 10px !important;
   position: fixed !important;
+  height: 50px!important
 }
 .row-content {
   margin: 10px auto;
   padding: 50px 0px 0px 0px;
+}
+.btn:focus {
+  outline: none !important;
 }
 
 .content {
@@ -26,9 +30,6 @@ body {
 
 .customFont {
   font-family: "Sahitya" !important;
-}
-.navbar {
-  height: 50px;
 }
 .navbar-brand {
   font-size: xx-large !important;

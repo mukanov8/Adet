@@ -7,7 +7,7 @@ $(document).ready(function() {
   }
 
   var request = localStorage.getItem('name');
-  document.getElementById("title").innerHTML = request.charAt(0).toUpperCase() + request.slice(1).toLowerCase();
+  document.getElementById("category").innerText = request.charAt(0).toUpperCase() + request.slice(1).toLowerCase()+"\xa0\xa0\xa0\xa0\xa0\xa0\xa0\xa0";
   var categories = [];
   var t = 60;
 

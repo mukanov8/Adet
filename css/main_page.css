@@ -11,12 +11,19 @@ body {
 table {
     font-size: large;
 }
+.btn:focus {
+    outline: none !important;
+  }
 .navbar {
     -webkit-box-shadow: 0 8px 6px -6px #999;
     -moz-box-shadow: 0 8px 6px -6px #999;
     box-shadow: 0 8px 6px -6px #999;
     background-color: white;
-}
+    padding: 0px !important;
+    margin-bottom: 10px !important;
+    position: fixed !important;
+    height: 50px!important
+    }
 .row-content {
     margin: 10px auto;
     padding: 50px 0px 0px 0px;
@@ -40,9 +47,6 @@ table {
 
 .customFont {
     font-family: 'Sahitya'!important;
-}
-.navbar {
-    height: 50px;
 }
 .navbar-brand {
     font-size: xx-large;

@@ -4,11 +4,26 @@
     <link rel="icon" href="images/app_icon.png" />
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sahitya&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <!-- 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -40,7 +55,6 @@
     <!-- <link href="hci_main_page.css" rel="stylesheet"/> -->
 
     <!-- <meta http-equiv="x-ua-compatible" content="ie=edge">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -48,7 +62,7 @@
   </head>
   <body>
     <!-- navbar -->
-    <div class="container" style="width: 100%;">
+    <!-- <div class="container" style="width: 100%;">
       <div class="row">
         <h1 class="col-xs-1">
           <img class="btn btn-lg" id="back" src="images/image 7.png" />
@@ -58,30 +72,39 @@
         </h1>
         <h1 class="col-xs-1"></h1>
       </div>
-    </div>
+    </div> -->
 
-    <div class="custom-file" style="max-width: 400px;">
-      <form runat="server">
-        <img
-          id="input_img"
-          src="images/photo_placeholder.png"
-          class="img-responsive"
-          style="width: 50%; padding: 10px;"
-          alt="your image"
-        />
-        <input
-          type="file"
-          style="font-family: Sahitya;"
-          id="imgInp"
-          accept="image/*"
-        />
-      </form>
-    </div>
-
+    <nav class="navbar navbar-expand-sm fixed-top">
+      <div class="container barlimit">
+          <button class="btn" id="back">
+              <i class="icon arrow left large"></i>
+          </button>
+          <a class="navbar-brand mx-auto customFont">New Item&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+      </div>
+    </nav>
     <div class="content">
+      <div style="padding-top: 40px;">
+        <form runat="server">
+          <img
+            id="input_img"
+            class="mid"
+            src="images/photo_placeholder.png"
+            class="img-responsive"
+          />
+          <input
+            type="file"
+            class="mid1"
+            style="font-family: Sahitya;"
+            id="imgInp"
+            accept="image/*"
+          />
+        </form>
+      </div>
+
+
       <div class="container-fluid">
         <div class="form-group">
-          <label for="item_name" style="font-family: Sahitya;">Item Name</label>
+          <label for="item_name" style="font-family: Sahitya; font-weight: bold;">Item Name</label>
           <input
             type="text"
             class="form-control"
@@ -92,7 +115,7 @@
           <!-- <textarea class="form-control" rows="1" id="item_name" style="font-family: Sahitya;"placeholder="E.g. H&M hoodie"></textarea> -->
         </div>
         <div class="form-group">
-          <label for="item_description" style="font-family: Sahitya;"
+          <label for="item_description" style="font-family: Sahitya; font-weight: bold;"
             >Description</label
           >
           <textarea
@@ -103,14 +126,14 @@
             placeholder="Example: My favourite hoodie that I wear everyday"
           ></textarea>
         </div>
-        <div class="form-group">
+        <div class="form-group" style="padding-bottom: 10px;">
           <label
             for="purchase_date"
-            class="col-2 col-form-label"
-            style="font-family: Sahitya;"
+            class="col-form-label"
+            style="font-family: Sahitya; font-weight: bold;"
             >Bought on</label
           >
-          <div class="col-10">
+          <div>
             <input
               class="form-control"
               id="item_date"
@@ -138,12 +161,17 @@
             type="text"
             class="form-control"
             id="item_category"
-            placeholder="Write your item category. Example: hoodie / t-shirt"
+            placeholder="Example: hoodie / t-shirt"
             style="text-transform: capitalize;"
           />
         </div>
-        <div class="form-group">
-          <button type="button" class="btn" id="saveBtn">Save</button>
+        <div class="form-group" style="padding-bottom: 20px;">
+          <div
+              class="ui submit labeled icon button float-right"
+              id="saveBtn"
+              class="btn customFont"
+            >
+              <i class="icon save"></i>Save</div>
         </div>
       </div>
     </div>

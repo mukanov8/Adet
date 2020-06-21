@@ -7,18 +7,36 @@
     <link rel="icon" href="images/app_icon.png" />
     <link href="css/items_page.css" rel="stylesheet" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sahitya:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Sahitya&display=swap"
+    rel="stylesheet"
+  />
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-storage.js"></script>
   </head>
   <body>
-    <div id="parent">
-      <div id="back_button">
-        <button type="button" id="arrow_button"></button>
-        <img src="./images/arrow.png" id="arrow" />
+    <nav class="navbar navbar-expand-sm fixed-top">
+      <div class="container barlimit">
+          <button class="btn" id="arrow_button">
+              <i class="icon arrow left large"></i>
+          </button>
+          <a class="navbar-brand mx-auto customFont" id="category"></a>
+      </div>
+    </nav>
+    <div id="parent" style="padding-top:25px">
         <script>
           arrow = document.getElementById("arrow_button");
           arrow.onclick = function () {
@@ -26,10 +44,11 @@
           };
         </script>
       </div>
-
-      <div id="title_box"></div>
-      <div id="title"></div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <script>
       var firebaseConfig = {

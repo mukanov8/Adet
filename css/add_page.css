@@ -7,28 +7,69 @@ body{
 	justify-content: center;
 } */
 
-.content {
-	max-width: 600px;
-    margin: auto;
-    padding: 10px;
+.navbar {
+	-webkit-box-shadow: 0 8px 6px -6px #999;
+	-moz-box-shadow: 0 8px 6px -6px #999;
+	box-shadow: 0 8px 6px -6px #999;
+	background-color: white;
+	padding: 0px !important;
+	margin-bottom: 10px !important;
+	position: fixed !important;
+	height: 50px!important
 }
-  
+.navbar-brand {
+	font-size: xx-large;
+}
+
+.content {
+	max-width: 800px;
+    margin: auto;
+	padding: 10px;
+}
+.mid {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	padding: 10px;
+	max-width: 200px;
+}
+.mid1 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	padding-bottom: 10px;
+}
+.btn:focus {
+	outline: none !important;
+  }
+/*   
 .container{
 	margin-top: -10px;
 	border-bottom: 2px black;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 	margin-bottom: -10px;
+} */
+.barlimit {
+    max-width: 1000px;
 }
 
-.custom-file{
-	margin-top: 10px;
+/* .custom-file{
+	margin-top: 50px;
 	margin-left: calc(50vw - 90px);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 	
+} */
+.customFont {
+    font-family: 'Sahitya'!important;
 }
-
 .form-group{
 	font-family: Sahitya;
-	padding: 5px;
+	/* padding: 5px; */
 	
 }
 .custom-select{
@@ -43,24 +84,12 @@ body{
 	margin-bottom: -20px;
 }
 
-#saveBtn{
-	/* color: black; */
-	/* outline-color: black; */
-	text-decoration-color: black;
-	background-color: #E5E5E5;
-	float: right;
-	width:25%;
-	margin-top: 10px;
-	margin: auto;
-	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
-	
-}
 
-#back{
+/* #back{
 	margin-left: -35px;
 	margin-top: -15px;
 	margin-bottom: -10px;
-	}
+	} */
 
 
 /*   
