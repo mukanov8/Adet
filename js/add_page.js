@@ -96,8 +96,9 @@ $(document).ready(function () {
         db.collection("items").add({
           image: imageName,
           description: document.getElementById("item_description").value,
-          timesWorn: 0,
-          lastWorn: firebase.firestore.Timestamp.fromDate(new Date()),
+          timesWorn: 1,
+          //lastWorn: firebase.firestore.Timestamp.fromDate(new Date()),
+          lastWorn: firebase.firestore.Timestamp.fromDate(new Date(document.getElementById("item_date").value)),
           name: document.getElementById("item_name").value,
           userId: userId,
           boughtOn: firebase.firestore.Timestamp.fromDate(
