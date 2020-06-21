@@ -40,7 +40,6 @@ $(document).ready(function () {
   // }
 
   navigator.serviceWorker.register("sw.js");
-
   function showNotification(name, id) {
     localStorage.setItem("item_id", id);
     navigator.serviceWorker.ready.then(function (registration) {
