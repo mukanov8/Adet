@@ -39,7 +39,7 @@ $(document).ready(function () {
   //   };
   // }
 
-  navigator.serviceWorker.register("notificationWorker.js");
+  navigator.serviceWorker.register("js/notificationWorker.js");
 
   function showNotification(name, id) {
     localStorage.setItem("item_id", id);
