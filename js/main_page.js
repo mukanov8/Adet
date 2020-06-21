@@ -39,7 +39,7 @@ $(document).ready(function () {
   //   };
   // }
 
-  navigator.serviceWorker.register("notificationWorker.js");
+  navigator.serviceWorker.register("sw.js");
 
   function showNotification(name, id) {
     localStorage.setItem("item_id", id);
@@ -60,7 +60,6 @@ $(document).ready(function () {
     .get()
     .then((res) => {
       res.forEach((element) => {
-        localStorage.setItem("notification", "done");
         if (Notification.permission === "granted") {
           showNotification(element.data().name, element.id);
         } else if (Notification.permission !== "denied") {
