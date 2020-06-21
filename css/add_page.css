@@ -34,14 +34,7 @@ body{
 	padding: 10px;
 	max-width: 200px;
 }
-.mid1 {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-	padding-bottom: 10px;
-	max-width: 200px;
-}
+
 .btn:focus {
 	outline: none !important;
   }
