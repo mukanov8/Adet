@@ -166,7 +166,9 @@ function insert(item) {
   ) {
     document.getElementById("notification").style.display = "block";
     document.getElementById("notification").innerHTML =
-      "<b>Notification: </b>It has been over 2 months since you last wore this item, and you seldom wear it.";
+      "<b>Notification: </b>It has been over 2 months since you last wore '" +
+      item.data().name +
+      "'.";
   } else {
     document.getElementById("notification").style.display = "none";
   }

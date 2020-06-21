@@ -29,6 +29,18 @@ $(document).ready(function () {
       location.href = "items_page.html";
     }
   });
+  function showNotification(name, id) {
+    const notification = new Notification("Disposal Recommendation", {
+      body: "It has been over 2 months since you last wore '" + name + "'.",
+    });
+    notification.onclick = (e) => {
+      localStorage.setItem("item_id", id);
+      window.location.href = "item_page.html";
+    };
+  }
+
+  // notif = localStorage.getItem("notification");
+  // if (typeof notif === "undefined" || notif != "done") {
   twoMonthAgo = new Date();
   twoMonthAgo.setMonth(twoMonthAgo.getMonth() - 2);
   db.collection("items")
@@ -37,14 +49,20 @@ $(document).ready(function () {
     .get()
     .then((res) => {
       res.forEach((element) => {
-        console.log(element.data().name);
-        alert(
-          "It has been over 2 months since you last wore '" +
-            element.data().name +
-            "'."
-        );
+        localStorage.setItem("notification", "done");
+        console.log(Notification.permission);
+        if (Notification.permission === "granted") {
+          showNotification(element.data().name, element.id);
+        } else if (Notification.permission !== "denied") {
+          Notification.requestPermission().then((permission) => {
+            if (permission === "granted") {
+              showNotification(element.data().name, element.id);
+            }
+          });
+        }
       });
     });
+  // }
 
   $(document.getElementById("signout")).click((ev) => {
     signOut();
