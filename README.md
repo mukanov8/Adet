@@ -9,15 +9,21 @@ A woman in her 20s that leads a dynamic lifestyle and is busy with her career, w
 - Check comments and feedback on your clothing item.
 - Get rid of unnecessary clothes recommended by the system.
 ### Showcase:
-Demo Video link - https://youtu.be/Pm_mLBgt4zM
-Prototype link - https://umidjonokhunov.github.io/Adet/main_page.html
-               - Test user id & pw: **teamkaktus**
+
+Demo Video link: https://youtu.be/Pm_mLBgt4zM
+
+Prototype link:  https://umidjonokhunov.github.io/Adet/main_page.html
+                 Test user id & pw: **teamkaktus**
                
 ### Representative screenshots
 <img src="https://i.imgur.com/3J3Enmk.png" width="200" />
+
 <img src="https://i.imgur.com/uR8o414.png" width="200" />
+
 <img src="https://i.imgur.com/dq4Qe9q.png" width="200" />
+
 <img src="https://i.imgur.com/y7sF9y5.png" width="200" />
+
 <img src="https://i.imgur.com/BzYFs48.png" width="200" />
 
 ### Important details:
