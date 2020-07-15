@@ -18,15 +18,15 @@ Prototype link:  https://umidjonokhunov.github.io/Adet/main_page.html
                
 ### Representative screenshots
 
-<img src="https://i.imgur.com/3J3Enmk.png" width="150" />
+<img src="https://i.imgur.com/3J3Enmk.png" width="400" />
 
-<img src="https://i.imgur.com/uR8o414.png" width="150" />
+<img src="https://i.imgur.com/uR8o414.png" width="400" />
 
-<img src="https://i.imgur.com/dq4Qe9q.png" width="150" />
+<img src="https://i.imgur.com/dq4Qe9q.png" width="400" />
 
-<img src="https://i.imgur.com/y7sF9y5.png" width="150" />
+<img src="https://i.imgur.com/y7sF9y5.png" width="400" />
 
-<img src="https://i.imgur.com/BzYFs48.png" width="150" />
+<img src="https://i.imgur.com/BzYFs48.png" width="400" />
 
 ### Important details:
 - main_page - the home page of our website.
